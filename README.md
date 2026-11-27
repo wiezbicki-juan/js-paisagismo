@@ -1,21 +1,20 @@
-# JS Paisagismo — site
+# Juliana Saes Paisagismo — site
 
 Site de uma página (HTML + CSS, sem build), publicado na Netlify em https://jspaisagismo.netlify.app
 (publica automaticamente o branch configurado na Netlify a cada push).
 
 ## Arquivos
 - `index.html` — a página inteira (estilos e scripts no próprio arquivo).
-- `img/` — imagens ilustrativas geradas no Canva (otimizadas). `og.jpg` é a prévia do link no WhatsApp/redes.
+- `img/` — projetos da Juliana (imagens 3D e obra executada, recortadas sem marca d'água), logo (`logo.png`, `logo-arvores.png`, `favicon.png`). `og.jpg` é a prévia do link no WhatsApp/redes.
 - `netlify.toml` — configuração da Netlify (publica a raiz, cabeçalho `noindex`).
 - `robots.txt`
 
 ## Contato
-Os botões "Enviar mensagem" abrem o Direct do Instagram (@js.paisagismo).
-Para usar WhatsApp, preencher `WHATSAPP_NUMERO` no fim do `index.html` (55 + DDD + número, só dígitos):
-os botões passam a abrir o WhatsApp automaticamente.
+Os botões de contato abrem o WhatsApp (19) 99843-3729 com uma mensagem pronta.
+Número e mensagem ficam em `WHATSAPP_NUMERO` / `WHATSAPP_MENSAGEM` no fim do `index.html`.
 
-## Trocar imagens por fotos reais
-Colocar a foto em `img/` com o mesmo nome do arquivo a substituir (JPG, 1200–1920 px de largura, idealmente < 300 KB).
+## Trocar ou adicionar projetos
+Colocar a foto em `img/` (JPG, 1200–1920 px de largura, idealmente < 300 KB) e duplicar um bloco `<button class="proj ...">` da seção Projetos.
 
 ## Quando for para o domínio próprio
 - Remover `<meta name="robots" ...>` do `index.html` e o `X-Robots-Tag` do `netlify.toml`.

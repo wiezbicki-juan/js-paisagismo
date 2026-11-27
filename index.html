@@ -5,263 +5,265 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Enquanto o site não for oficial, fica fora do Google. Remover esta linha (e o X-Robots-Tag do netlify.toml) ao publicar no domínio próprio. -->
 <meta name="robots" content="noindex, nofollow">
-<title>JS Paisagismo · Projetos e jardins</title>
-<meta name="description" content="JS Paisagismo: projetos paisagísticos desenvolvidos em AutoCAD, implantação e manutenção de jardins.">
-<meta name="theme-color" content="#18291c">
+<title>Juliana Saes Paisagismo · Projetos e jardins</title>
+<meta name="description" content="Juliana Saes Paisagismo: projetos paisagísticos em AutoCAD com visualização 3D, implantação e manutenção de jardins.">
+<meta name="theme-color" content="#f7eedf">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jspaisagismo.netlify.app/">
-<meta property="og:title" content="JS Paisagismo · Projetos e jardins">
-<meta property="og:description" content="Do projeto em AutoCAD ao jardim pronto: paisagismo pensado para o seu espaço.">
+<meta property="og:title" content="Juliana Saes Paisagismo · Um jardim não acontece por acaso">
+<meta property="og:description" content="Do projeto em AutoCAD e 3D ao jardim pronto: paisagismo pensado para o seu espaço.">
 <meta property="og:image" content="https://jspaisagismo.netlify.app/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2318291c'/%3E%3Cpath d='M16 25c0-8 3-13 9-16-1 8-4 13-9 16zm0 0c0-6-2-10-7-12 0 6 2 10 7 12z' fill='%23d9e4b8'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero.jpg" imagesrcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/fachada-executada.jpg" imagesrcset="img/fachada-executada-700.jpg 700w, img/fachada-executada.jpg 1122w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
 <style>
+/*
+  VOZ: elegante, calma, confiante — como o post "Um jardim não acontece por acaso. Ele é projetado."
+  IDEIA: um caderno de projeto de paisagismo; cada seção é uma prancha.
+  IMAGEM: os projetos da Juliana (3D e obra executada) em molduras em arco.
+  COR E TIPO: areia da logo, verde-oliva, sálvia, rosa-argila e taupe; Cormorant itálico + Jost espaçado.
+  LAYOUT: blocos largos de cor chapada, muito respiro, fotos grandes.
+*/
 :root{
-  --linho:#f5efe4;
-  --linho-2:#ece3d3;
-  --papel:#fbf8f2;
-  --floresta:#18291c;
-  --verde:#2c4a31;
-  --musgo:#7b9461;
-  --broto:#d9e4b8;
-  --terracota:#b5653d;
-  --argila:#d89a6d;
-  --tinta:#141a15;
-  --suave:#5d6158;
-  --linha:rgba(24,41,28,.14);
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+  --areia:#f7eedf;      /* fundo da logo */
+  --areia-2:#efe4d1;
+  --creme:#fbf7ef;
+  --oliva:#a7a96a;      /* verde-oliva pastel */
+  --oliva-clara:#dcdcb4;
+  --oliva-escura:#5e6037;
+  --salvia:#cdd3bc;
+  --rosa:#e8cfc1;       /* rosa-argila pastel */
+  --taupe:#8b7e75;      /* árvore do meio da logo */
+  --tronco:#4d4129;
+  --tinta:#3b392d;
+  --suave:#6e6a5d;
+  --linha:rgba(77,65,41,.15);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--linho);color:var(--tinta);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--areia);color:var(--tinta);font:400 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.015em;margin:0}
-em{font-style:italic}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;margin:0;text-wrap:balance}
 p{margin:0 0 1em}
 .wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
-.olho{display:inline-flex;align-items:center;gap:10px;font:600 .74rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--terracota)}
-.olho::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
-.h2{font-size:clamp(2.6rem,6vw,4.8rem)}
-.h2 em{color:var(--verde)}
-.sec{padding:clamp(84px,11vw,150px) 0}
+.olho{display:block;font:400 .78rem/1.5 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--oliva-escura)}
+.h2{font-size:clamp(2.6rem,5.6vw,4.4rem);color:var(--tinta)}
+.h2 em,.hero h1 em{font-style:italic}
+.traco{display:block;width:120px;height:1px;background:currentColor;opacity:.45;margin:26px 0}
+.sec{padding:clamp(84px,11vw,140px) 0}
 
 /* Botões */
-.btn{--bg:var(--floresta);--fg:#fff;display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;background:var(--bg);color:var(--fg);font:600 .95rem/1 var(--sans);text-decoration:none;border:1.5px solid var(--bg);transition:transform .35s var(--ease),background .3s,color .3s,border-color .3s}
+.btn{--bg:var(--oliva-escura);--fg:var(--creme);display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:14px 28px;border-radius:999px;background:var(--bg);color:var(--fg);font:500 .82rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--bg);transition:transform .35s var(--ease),background .3s,color .3s,border-color .3s}
 .btn:hover{transform:translateY(-3px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--oliva-escura);outline-offset:3px}
 .btn svg{width:18px;height:18px;flex:none}
-.btn .seta{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-right:-12px;transition:transform .35s var(--ease)}
-.btn:hover .seta{transform:rotate(-45deg)}
-.btn-claro{--bg:transparent;--fg:var(--floresta);border-color:var(--linha)}
-.btn-claro:hover{border-color:var(--floresta)}
-.btn-broto{--bg:var(--broto);--fg:var(--floresta)}
-.btn-broto .seta{background:rgba(24,41,28,.1)}
-.btn-contorno{--bg:transparent;--fg:#fff;border-color:rgba(255,255,255,.35)}
-.btn-contorno:hover{border-color:#fff}
+.btn-claro{--bg:transparent;--fg:var(--tinta);border-color:rgba(59,57,45,.3)}
+.btn-claro:hover{border-color:var(--tinta)}
+.btn-areia{--bg:var(--areia);--fg:var(--oliva-escura)}
+.btn-contorno{--bg:transparent;--fg:var(--creme);border-color:rgba(251,247,239,.45)}
+.btn-contorno:hover{border-color:var(--creme)}
 
 /* Cabeçalho */
-.topo{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,transform .4s}
-.topo.solido{background:rgba(245,239,228,.86);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px);box-shadow:0 1px 0 var(--linha)}
-.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
-.marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--floresta)}
-.marca svg{width:40px;height:40px;flex:none}
-.marca b{display:block;font:400 1.6rem/1 var(--serif);letter-spacing:-.01em}
-.marca small{display:block;font:600 .6rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--terracota);margin-top:4px}
+.topo{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s}
+.topo.solido{background:rgba(247,238,223,.9);backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);box-shadow:0 1px 0 var(--linha)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
+.marca img{height:46px;width:auto}
+.marca b{display:block;font:italic 500 1.55rem/1 var(--serif)}
+.marca small{display:block;font:400 .62rem/1 var(--sans);letter-spacing:.38em;text-transform:uppercase;color:var(--oliva);margin-top:5px}
 .menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
-.menu a{text-decoration:none;font-weight:500;font-size:.93rem;position:relative}
-.menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1.5px;background:var(--terracota);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.menu a{text-decoration:none;font-size:.92rem;position:relative}
+.menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--oliva-escura);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 .menu a:not(.btn):hover::after{transform:scaleX(1)}
-.menu .btn{padding:12px 20px}
-.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--linha);background:transparent;cursor:pointer;place-items:center;color:var(--floresta)}
-.burger span{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:transform .3s}
+.menu .btn{min-height:44px;padding:10px 20px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--linha);background:transparent;cursor:pointer;place-items:center;color:var(--tinta)}
+.burger span{display:block;width:18px;height:1.5px;background:currentColor;position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .3s}
 .burger span::before{top:-6px}.burger span::after{top:6px}
 .aberto .burger span{background:transparent}
 .aberto .burger span::before{transform:translateY(6px) rotate(45deg)}
 .aberto .burger span::after{transform:translateY(-6px) rotate(-45deg)}
-@media (max-width:900px){
+@media (max-width:940px){
   .burger{display:grid}
-  .menu{position:fixed;inset:78px 0 auto;flex-direction:column;align-items:flex-start;gap:6px;padding:22px clamp(18px,4vw,40px) 30px;background:var(--linho);border-bottom:1px solid var(--linha);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
-  .menu a:not(.btn){font:400 2rem/1.3 var(--serif)}
+  .menu{position:fixed;inset:80px 0 auto;flex-direction:column;align-items:flex-start;gap:4px;padding:20px clamp(18px,4vw,40px) 30px;background:var(--areia);border-bottom:1px solid var(--linha);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+  .menu a:not(.btn){font:italic 400 2rem/1.35 var(--serif)}
   .menu li:last-child{margin-top:14px}
   .aberto .menu{opacity:1;transform:none;pointer-events:auto}
-  .aberto{background:var(--linho)}
+  .aberto{background:var(--areia)}
 }
 
 /* Abertura */
-.hero{padding:118px 0 0;position:relative}
-.hero-grade{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:end;min-height:calc(100svh - 118px)}
-.hero-texto{padding-bottom:clamp(40px,7vw,96px)}
-.hero h1{font-size:clamp(3.4rem,8.4vw,7.6rem);margin:22px 0 26px;color:var(--floresta)}
-.hero h1 em{color:var(--terracota)}
-.hero p.sub{font-size:clamp(1.04rem,1.6vw,1.18rem);color:var(--suave);max-width:470px;margin-bottom:34px}
+.hero{padding:120px 0 clamp(40px,6vw,80px)}
+.hero-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(30px,5vw,80px);align-items:center;min-height:calc(100svh - 160px)}
+.hero h1{font-size:clamp(3rem,6.6vw,6.2rem);font-weight:400;color:var(--tinta);margin-top:18px;text-transform:uppercase;letter-spacing:-.01em}
+.hero .olho{font-size:clamp(.82rem,1.3vw,1rem);color:var(--tinta);letter-spacing:.3em;max-width:30ch}
+.hero p.sub{font-size:clamp(1.04rem,1.5vw,1.16rem);color:var(--suave);max-width:440px;margin-bottom:34px}
 .hero .botoes{display:flex;flex-wrap:wrap;gap:12px}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:44px;padding-top:24px;border-top:1px solid var(--linha);font-size:.86rem;color:var(--suave)}
-.hero-tags span{display:inline-flex;align-items:center;gap:8px}
-.hero-tags span::before{content:"✦";color:var(--musgo);font-size:.75rem}
-.hero-foto{position:relative;align-self:stretch;display:flex;align-items:flex-end}
-.arco{position:relative;width:100%;height:min(78svh,760px);border-radius:999px 999px 0 0;overflow:hidden;background:var(--verde)}
-.arco img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:respira 18s ease-in-out infinite alternate}
-@keyframes respira{to{transform:scale(1.14) translate(-1.5%,-1%)}}
-.selo-gira{position:absolute;left:-46px;top:22%;width:132px;height:132px;border-radius:50%;background:var(--broto);display:grid;place-items:center;box-shadow:0 20px 40px -20px rgba(24,41,28,.5)}
-.selo-gira svg.texto{position:absolute;inset:0;width:100%;height:100%;animation:gira 22s linear infinite}
-.selo-gira svg.folha{width:38px;height:38px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:40px;padding-top:22px;border-top:1px solid var(--linha);font-size:.86rem;color:var(--suave)}
+.hero-tags span{display:inline-flex;align-items:center;gap:9px}
+.hero-tags span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--oliva)}
+.hero-foto{position:relative}
+.arco{position:relative;aspect-ratio:1/1.08;max-height:76svh;width:100%;border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--salvia)}
+.arco img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;animation:respira 20s ease-in-out infinite alternate}
+@keyframes respira{from{transform:scale(1.04)}to{transform:scale(1.12)}}
+.selo-gira{position:absolute;left:-40px;top:16%;width:130px;height:130px;border-radius:50%;background:var(--areia);display:grid;place-items:center;box-shadow:0 18px 40px -22px rgba(77,65,41,.55)}
+.selo-gira svg{position:absolute;inset:0;width:100%;height:100%;animation:gira 26s linear infinite}
+.selo-gira img{width:58px}
 @keyframes gira{to{transform:rotate(360deg)}}
-.cartao-cad{position:absolute;right:-18px;bottom:44px;display:flex;align-items:center;gap:12px;background:var(--papel);padding:10px 18px 10px 10px;border-radius:999px;box-shadow:0 24px 50px -24px rgba(24,41,28,.55);font-size:.82rem;line-height:1.3}
-.cartao-cad img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-.cartao-cad b{display:block;font-size:.9rem;color:var(--floresta)}
+.legenda-foto{position:absolute;right:16px;bottom:18px;background:rgba(251,247,239,.92);padding:10px 18px;border-radius:999px;font-size:.8rem;letter-spacing:.06em;color:var(--tinta);display:flex;align-items:center;gap:9px}
+.legenda-foto i{width:8px;height:8px;border-radius:50%;background:var(--oliva)}
 @media (max-width:900px){
-  .hero{padding-top:100px}
+  .hero{padding-top:104px}
   .hero-grade{grid-template-columns:1fr;min-height:0}
-  .hero-texto{padding-bottom:0}
-  .arco{height:min(70svh,560px)}
-  .selo-gira{left:auto;right:14px;top:-50px;width:112px;height:112px}
-  .cartao-cad{right:12px;bottom:20px}
+  .arco{aspect-ratio:1/1;max-height:none}
+  .selo-gira{left:auto;right:12px;top:-46px;width:104px;height:104px}
+  .selo-gira img{width:46px}
 }
 
-/* Faixa animada */
-.faixa{background:var(--floresta);color:var(--broto);overflow:hidden;padding:26px 0;white-space:nowrap}
-.faixa .trilho{display:inline-flex;gap:46px;animation:corre 38s linear infinite;font:400 clamp(1.7rem,3.4vw,2.6rem)/1 var(--serif)}
-.faixa span{display:inline-flex;align-items:center;gap:46px}
-.faixa span::after{content:"✦";font-size:.55em;color:var(--argila)}
-.faixa em{color:#fff}
+/* Faixa */
+.faixa{background:var(--oliva-clara);color:var(--oliva-escura);overflow:hidden;padding:22px 0;white-space:nowrap}
+.faixa .trilho{display:inline-flex;gap:44px;animation:corre 42s linear infinite;font:italic 400 clamp(1.6rem,3vw,2.3rem)/1 var(--serif)}
+.faixa span{display:inline-flex;align-items:center;gap:44px}
+.faixa span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--taupe)}
 @keyframes corre{to{transform:translateX(-50%)}}
 
-/* Manifesto */
-.manifesto{background:var(--papel)}
-.manifesto .grade{display:grid;grid-template-columns:.8fr 2fr;gap:clamp(28px,6vw,90px)}
-.manifesto blockquote{margin:0;font:400 clamp(1.9rem,4vw,3.3rem)/1.14 var(--serif);color:var(--floresta);letter-spacing:-.01em}
-.manifesto blockquote em{color:var(--terracota)}
-.manifesto .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;color:var(--suave)}
-@media (max-width:900px){.manifesto .grade,.manifesto .cols{grid-template-columns:1fr}}
+/* Cabeçalhos de seção */
+.cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,6vw,64px)}
+.cab .h2{margin-top:16px;max-width:14ch}
+.cab p{max-width:420px;color:var(--suave);margin:0}
+
+/* Projetos */
+.projetos{background:var(--creme)}
+.galeria{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+.proj{position:relative;margin:0;border-radius:22px;overflow:hidden;cursor:zoom-in;background:var(--salvia);border:0;padding:0;text-align:left;color:inherit;font:inherit;display:block}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.proj:hover img{transform:scale(1.05)}
+.proj .info{position:absolute;left:14px;right:14px;bottom:14px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 14px;padding:14px 18px;border-radius:16px;background:rgba(251,247,239,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.proj .info b{display:block;font:italic 500 1.45rem/1.1 var(--serif);color:var(--tinta)}
+.proj .info span{font-size:.86rem;color:var(--suave)}
+.selo{font:500 .68rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:8px 12px;border-radius:999px;white-space:nowrap}
+.selo.d3{background:var(--salvia);color:var(--oliva-escura)}
+.selo.obra{background:var(--rosa);color:var(--tronco)}
+.p1{grid-column:span 7;aspect-ratio:4/3}
+.p2,.p3{grid-column:span 5}
+.p2 img,.p3 img{position:absolute;inset:0}
+.p4{grid-column:span 7;aspect-ratio:4/3}
+.galeria-rodape{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:30px;color:var(--suave);font-size:.95rem}
+@media (max-width:820px){.galeria{grid-template-columns:1fr}.p1,.p2,.p3,.p4{grid-column:auto;aspect-ratio:4/3.2}.proj .info{left:10px;right:10px;bottom:10px;padding:10px 14px;flex-wrap:nowrap;align-items:center}.proj .info b{font-size:1.2rem}.proj .info span span{display:none}.selo{padding:7px 10px;font-size:.6rem}}
+
+/* Visualizador */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(40,38,28,.92);display:none;align-items:center;justify-content:center;padding:70px 16px 90px}
+.lb.ver{display:flex}
+.lb img{max-width:min(1200px,100%);max-height:100%;border-radius:14px;object-fit:contain}
+.lb p{position:absolute;left:0;right:0;bottom:26px;text-align:center;color:var(--areia);margin:0;font:italic 400 1.4rem/1.2 var(--serif);padding:0 70px}
+.lb button{position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(247,238,223,.4);background:rgba(247,238,223,.08);color:var(--areia);cursor:pointer;display:grid;place-items:center}
+.lb button svg{width:22px;height:22px}
+.lb .fechar{top:14px;right:14px}
+.lb .ant{left:14px;top:50%;transform:translateY(-50%)}
+.lb .prox{right:14px;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){.lb .ant,.lb .prox{top:auto;bottom:16px;transform:none}.lb p{bottom:84px;padding:0 16px}}
+
+/* Do 3D ao jardim */
+.tres{background:var(--oliva-escura);color:var(--areia)}
+.tres .olho{color:var(--oliva-clara)}
+.tres .h2{color:var(--creme);margin-top:16px}
+.tres-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,6vw,90px);align-items:center}
+.tres p{color:#e4dcc7;max-width:520px}
+.checks{list-style:none;padding:0;margin:28px 0 36px;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start}
+.checks svg{width:22px;height:22px;flex:none;margin-top:3px;color:var(--oliva-clara)}
+.tres-foto{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
+.tres-foto img{width:100%;height:100%;object-fit:cover}
+.tres-foto .legenda-foto{left:16px;right:auto}
+@media (max-width:900px){.tres-grade{grid-template-columns:1fr}.tres-foto{order:-1}}
 
 /* Serviços */
-.cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,6vw,70px)}
-.cab .h2{margin-top:18px;max-width:12ch}
-.cab p{max-width:420px;color:var(--suave);margin:0}
 .lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--linha)}
-.item{display:grid;grid-template-columns:90px 1.1fr 1.2fr 220px;gap:28px;align-items:center;padding:30px 0;border-bottom:1px solid var(--linha);transition:padding .45s var(--ease),background .45s}
-.item:hover{padding-left:18px;padding-right:18px;background:var(--papel)}
-.item .n{font:400 1.2rem var(--serif);color:var(--terracota)}
-.item h3{font-size:clamp(1.9rem,3vw,2.6rem);color:var(--floresta)}
-.item p{margin:0;color:var(--suave);font-size:.97rem}
-.item figure{margin:0;height:140px;border-radius:999px;overflow:hidden;transition:border-radius .5s var(--ease)}
-.item:hover figure{border-radius:20px}
-.item figure img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.item:hover figure img{transform:scale(1.07)}
-@media (max-width:900px){.item{grid-template-columns:1fr;gap:12px;padding:30px 0}.item:hover{padding-left:0;padding-right:0;background:none}.item figure{height:200px;border-radius:20px;order:-1}.item .n{order:-1}}
-
-/* AutoCAD */
-.cad{background:var(--floresta);color:#dfe6d4;overflow:hidden;position:relative}
-.cad::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(217,228,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(217,228,184,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 80% 30%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 80% 30%,#000,transparent 70%)}
-.cad .wrap{position:relative}
-.cad .olho{color:var(--argila)}
-.cad .h2{color:#fff;margin:18px 0 26px}
-.cad .h2 em{color:var(--broto)}
-.cad-grade{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,90px);align-items:center}
-.cad p{color:#c9d2bd;max-width:520px}
-.checks{list-style:none;padding:0;margin:30px 0 38px;display:grid;gap:14px}
-.checks li{display:flex;gap:14px;align-items:flex-start}
-.checks svg{width:22px;height:22px;flex:none;margin-top:3px;color:var(--broto)}
-.cad-fotos{position:relative;padding-bottom:70px}
-.cad-fotos .grande{border-radius:26px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
-.cad-fotos .grande img{width:100%;height:100%;object-fit:cover}
-.cad-fotos .menor{position:absolute;left:-48px;bottom:0;width:36%;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:6px solid var(--floresta);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
-.cad-fotos .menor img{width:100%;height:100%;object-fit:cover}
-.cad-fotos .etiqueta{position:absolute;right:18px;bottom:24px;background:var(--broto);color:var(--floresta);border-radius:999px;padding:10px 16px;font:600 .8rem/1 var(--sans);display:flex;align-items:center;gap:8px}
-.cad-fotos .etiqueta i{width:8px;height:8px;border-radius:50%;background:#3aa65a;box-shadow:0 0 0 4px rgba(58,166,90,.25);animation:pulsa 1.8s infinite}
-@keyframes pulsa{50%{box-shadow:0 0 0 8px rgba(58,166,90,0)}}
-@media (max-width:900px){.cad-grade{grid-template-columns:1fr}.cad-fotos{order:-1;padding-bottom:0}.cad-fotos .menor{display:none}.cad-fotos .etiqueta{bottom:16px;right:16px}}
-
-/* Inspirações */
-.insp-grade{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px;height:clamp(420px,56vw,640px)}
-.card{position:relative;border-radius:26px;overflow:hidden;color:#fff;text-decoration:none;display:flex;align-items:flex-end;isolation:isolate}
-.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s var(--ease)}
-.card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 40%,rgba(14,22,15,.82))}
-.card:hover img{transform:scale(1.06)}
-.card .txt{padding:28px}
-.card small{font:600 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--broto)}
-.card h3{font-size:clamp(1.8rem,2.6vw,2.4rem);margin-top:10px}
-.card p{margin:8px 0 0;font-size:.92rem;color:#e4e9dc;max-width:30ch;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .5s}
-.card:hover p{max-height:120px;opacity:1}
-@media (hover:none){.card p{max-height:none;opacity:1}}
-@media (max-width:900px){.insp-grade{grid-template-columns:1fr;height:auto}.card{height:400px}}
+.item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:14px 40px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--linha);transition:padding .45s var(--ease),background .45s}
+.item:hover{padding-left:20px;padding-right:20px;background:var(--creme)}
+.item h3{font-size:clamp(1.9rem,3vw,2.5rem);font-style:italic;color:var(--tinta)}
+.item p{margin:0;color:var(--suave)}
+@media (max-width:760px){.item{grid-template-columns:1fr}.item:hover{padding-left:0;padding-right:0;background:none}}
 
 /* Processo */
-.processo{background:var(--linho-2)}
-.proc-grade{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(32px,6vw,90px)}
+.processo{background:var(--areia-2)}
+.proc-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(32px,6vw,90px)}
 .proc-grade .fixo{position:sticky;top:110px;align-self:start}
-.proc-grade .fixo .h2{margin:18px 0 22px}
-.proc-grade .fixo p{color:var(--suave);max-width:380px}
+.proc-grade .fixo .h2{margin:16px 0 22px}
+.proc-grade .fixo p{color:var(--suave);max-width:380px;margin-bottom:28px}
 .passos{list-style:none;margin:0;padding:0;counter-reset:p}
-.passo{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:34px 0;border-top:1px solid var(--linha)}
+.passo{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;padding:32px 0;border-top:1px solid var(--linha)}
 .passo:last-child{border-bottom:1px solid var(--linha)}
-.passo::before{counter-increment:p;content:"0" counter(p);font:400 4rem/0.9 var(--serif);color:var(--terracota)}
-.passo h3{font-size:2rem;color:var(--floresta);margin-bottom:8px}
+.passo::before{counter-increment:p;content:counter(p);font:italic 400 4rem/.9 var(--serif);color:var(--oliva)}
+.passo h3{font-size:2rem;color:var(--tinta);margin-bottom:8px}
 .passo p{margin:0;color:var(--suave)}
-@media (max-width:900px){.proc-grade{grid-template-columns:1fr}.proc-grade .fixo{position:static}.passo{grid-template-columns:72px 1fr}.passo::before{font-size:3rem}}
+@media (max-width:900px){.proc-grade{grid-template-columns:1fr}.proc-grade .fixo{position:static}.passo{grid-template-columns:60px minmax(0,1fr)}.passo::before{font-size:3rem}}
 
 /* Sobre */
-.sobre-grade{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
-.sobre figure{margin:0;position:relative}
-.sobre figure .f1{border-radius:0 0 999px 999px;overflow:hidden;aspect-ratio:4/5}
-.sobre figure .f1 img{width:100%;height:100%;object-fit:cover}
-.sobre .h2{margin:18px 0 26px}
+.sobre-grade{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:center}
+.sobre .cartao-logo{aspect-ratio:4/5;border-radius:0 0 999px 999px;background:var(--areia);border:1px solid var(--linha);display:grid;place-items:center;padding:9%}
+.sobre .cartao-logo img{width:100%;max-width:300px}
+.sobre .h2{margin:16px 0 24px}
 .sobre p{color:var(--suave)}
-.valores{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
-.valor{padding:22px;border-radius:20px;background:var(--papel);border:1px solid var(--linha)}
-.valor svg{width:28px;height:28px;color:var(--terracota);margin-bottom:10px}
-.valor b{display:block;font:400 1.45rem/1.1 var(--serif);color:var(--floresta);margin-bottom:6px}
-.valor span{font-size:.9rem;color:var(--suave)}
-@media (max-width:900px){.sobre-grade{grid-template-columns:1fr}.valores{grid-template-columns:1fr}}
+.sobre blockquote{margin:30px 0;padding-left:24px;border-left:1px solid var(--oliva);font:italic 400 clamp(1.5rem,2.6vw,2rem)/1.25 var(--serif);color:var(--tinta)}
+.valores{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:32px}
+.valor{padding:22px;border-radius:18px;background:var(--creme);border:1px solid var(--linha)}
+.valor svg{width:26px;height:26px;color:var(--oliva-escura);margin-bottom:10px}
+.valor b{display:block;font:italic 500 1.45rem/1.1 var(--serif);color:var(--tinta);margin-bottom:6px}
+.valor span{font-size:.92rem;color:var(--suave)}
+@media (max-width:900px){.sobre-grade{grid-template-columns:1fr}.sobre .cartao-logo{max-width:420px;margin:0 auto;width:100%}}
+@media (max-width:520px){.valores{grid-template-columns:1fr}}
 
 /* Instagram */
 .insta{padding-top:0}
-.insta-box{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding:clamp(28px,5vw,56px);border-radius:30px;background:linear-gradient(120deg,var(--papel),#f3e6d6);border:1px solid var(--linha)}
-.insta-box h2{font-size:clamp(2.2rem,4.6vw,3.6rem);color:var(--floresta);margin-top:14px}
-.insta-box h2 em{color:var(--terracota)}
-.insta-box p{margin:12px 0 0;color:var(--suave)}
+.insta-box{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;padding:clamp(28px,5vw,56px);border-radius:28px;background:var(--rosa)}
+.insta-box h2{font-size:clamp(2.2rem,4.4vw,3.4rem);color:var(--tinta);margin-top:12px}
+.insta-box h2 em{font-style:italic}
+.insta-box p{margin:12px 0 0;color:#5f5148}
+.insta-box .olho{color:var(--tronco)}
 @media (max-width:760px){.insta-box{grid-template-columns:1fr}}
 
 /* Contato */
-.contato{background:var(--floresta);color:#fff;position:relative;overflow:hidden;text-align:center}
-.contato img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22}
-.contato::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(24,41,28,.35),rgba(24,41,28,.96) 75%);z-index:1}
+.contato{background:var(--oliva-escura);color:var(--creme);position:relative;overflow:hidden;text-align:center}
+.contato img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2}
+.contato::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(94,96,55,.6),rgba(94,96,55,.97) 75%);z-index:1}
 .contato .wrap{position:relative;z-index:2}
-.contato .olho{color:var(--argila)}
-.contato h2{font-size:clamp(3rem,9vw,7.4rem);margin:22px auto 26px;max-width:12ch}
-.contato h2 em{color:var(--broto)}
-.contato p{color:#cfd8c3;max-width:520px;margin:0 auto 38px}
+.contato .olho{color:var(--oliva-clara)}
+.contato h2{font-size:clamp(3rem,8.4vw,6.6rem);margin:20px auto 24px;max-width:12ch;color:var(--creme)}
+.contato h2 em{font-style:italic}
+.contato p{color:#e8e1cd;max-width:520px;margin:0 auto 36px}
 .contato .botoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.contato .numero{margin-top:22px;font-size:.95rem;letter-spacing:.08em;color:var(--oliva-clara)}
 
 /* Rodapé */
-.rodape{background:#0f1a12;color:#9aa78f;padding:56px 0 34px;font-size:.9rem}
-.rodape .grade{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
-.rodape .marca{color:#fff}
-.rodape .marca small{color:var(--argila)}
-.rodape h4{font:600 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#fff;margin:6px 0 16px}
+.rodape{background:var(--areia-2);color:var(--suave);padding:56px 0 34px;font-size:.92rem}
+.rodape .grade{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:30px;padding-bottom:34px;border-bottom:1px solid var(--linha)}
+.rodape .logo-rodape{width:170px}
+.rodape h4{font:500 .7rem/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--tinta);margin:8px 0 16px}
 .rodape ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .rodape a{text-decoration:none}
-.rodape a:hover{color:#fff}
-.rodape .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:24px;font-size:.82rem}
+.rodape a:hover{color:var(--tinta)}
+.rodape .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:22px;font-size:.84rem}
 @media (max-width:760px){.rodape .grade{grid-template-columns:1fr}}
 
 /* Botão flutuante */
-.flutuante{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--terracota);color:#fff;box-shadow:0 16px 34px -12px rgba(0,0,0,.45);transition:transform .3s var(--ease),opacity .3s;opacity:0;transform:translateY(20px) scale(.8);pointer-events:none}
+.flutuante{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--oliva-escura);color:var(--creme);box-shadow:0 16px 34px -12px rgba(0,0,0,.4);transition:transform .3s var(--ease),opacity .3s;opacity:0;transform:translateY(20px) scale(.8);pointer-events:none}
 .flutuante.ver{opacity:1;transform:none;pointer-events:auto}
 .flutuante:hover{transform:scale(1.06)}
 .flutuante svg{width:28px;height:28px}
 
 /* Revelação ao rolar */
-.js .rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv{opacity:0;transform:translateY(32px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .js .rv.on{opacity:1;transform:none}
 .js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
 @media (prefers-reduced-motion:reduce){
@@ -276,17 +278,17 @@ p{margin:0 0 1em}
 
 <header class="topo" id="topo">
   <div class="wrap">
-    <a class="marca" href="#inicio" aria-label="JS Paisagismo, início">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#18291c"/><path d="M20 31c0-10 3.6-16.4 11-20-1.2 10-5 16.4-11 20zm0 0c0-7.4-2.4-12.4-8.6-15 0 7.6 2.6 12.4 8.6 15z" fill="#d9e4b8"/></svg>
-      <span><b>JS Paisagismo</b><small>Projetos &amp; jardins</small></span>
+    <a class="marca" href="#inicio" aria-label="Juliana Saes Paisagismo, início">
+      <img src="img/logo-arvores.png" alt="" width="58" height="46">
+      <span><b>Juliana Saes</b><small>Paisagismo</small></span>
     </a>
     <nav aria-label="Principal">
       <ul class="menu" id="menu">
+        <li><a href="#projetos">Projetos</a></li>
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#projeto">Projeto em AutoCAD</a></li>
-        <li><a href="#processo">Como trabalhamos</a></li>
+        <li><a href="#processo">Como trabalho</a></li>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a class="btn js-contato" href="#contato">Fale conosco</a></li>
+        <li><a class="btn js-msg" href="https://wa.me/5519998433729" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>WhatsApp</a></li>
       </ul>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
@@ -297,28 +299,26 @@ p{margin:0 0 1em}
   <!-- ABERTURA -->
   <section class="hero" id="inicio">
     <div class="wrap hero-grade">
-      <div class="hero-texto">
-        <span class="olho rv">Paisagismo autoral</span>
-        <h1 class="rv d1">Natureza desenhada para o seu <em>jeito de viver.</em></h1>
-        <p class="sub rv d2">Criamos jardins que unem beleza, funcionalidade e cuidado. Cada projeto nasce no papel, ganha precisão no AutoCAD e floresce no seu espaço.</p>
+      <div>
+        <span class="olho rv">Um jardim não acontece por acaso.</span>
+        <h1 class="rv d1"><em>Ele é projetado.</em></h1>
+        <span class="traco rv d1"></span>
+        <p class="sub rv d2">Projetos paisagísticos desenhados em AutoCAD e apresentados em 3D: você vê o seu jardim pronto antes da primeira muda ir para a terra.</p>
         <div class="botoes rv d3">
-          <a class="btn js-contato" href="#contato">Solicitar orçamento <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
-          <a class="btn btn-claro" href="#servicos">Conhecer serviços</a>
+          <a class="btn js-msg" href="https://wa.me/5519998433729" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Pedir orçamento</a>
+          <a class="btn btn-claro" href="#projetos">Ver projetos</a>
         </div>
-        <div class="hero-tags rv d3"><span>Projeto paisagístico</span><span>Implantação</span><span>Manutenção</span></div>
+        <div class="hero-tags rv d3"><span>Projeto paisagístico</span><span>Visualização 3D</span><span>Implantação</span><span>Manutenção</span></div>
       </div>
       <div class="hero-foto rv d2">
         <div class="arco">
-          <img src="img/hero.jpg" srcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" alt="Jardim tropical com caminho de pedras e gramado ao entardecer" fetchpriority="high">
+          <img src="img/fachada-executada.jpg" srcset="img/fachada-executada-700.jpg 700w, img/fachada-executada.jpg 1122w" sizes="(max-width: 900px) 100vw, 50vw" alt="Fachada de residência com jardim de palmeiras e muro de pedra iluminado ao entardecer" fetchpriority="high">
         </div>
         <div class="selo-gira" aria-hidden="true">
-          <svg class="texto" viewBox="0 0 132 132"><defs><path id="circ" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text font-family="Manrope, sans-serif" font-size="10.4" font-weight="700" letter-spacing="3.1" fill="#18291c"><textPath href="#circ">JS PAISAGISMO ✦ PROJETOS &amp; JARDINS ✦ </textPath></text></svg>
-          <svg class="folha" viewBox="0 0 40 40"><path d="M20 33c0-11 4-18 12-22-1.3 11-5.4 18-12 22zm0 0c0-8-2.6-13.6-9.4-16.4 0 8.4 2.8 13.6 9.4 16.4z" fill="#18291c"/></svg>
+          <svg viewBox="0 0 130 130"><defs><path id="circ" d="M65,65 m-49,0 a49,49 0 1,1 98,0 a49,49 0 1,1 -98,0"/></defs><text font-family="Jost, sans-serif" font-size="10" font-weight="500" letter-spacing="3.4" fill="#5e6037"><textPath href="#circ">JULIANA SAES ✦ PAISAGISMO ✦ </textPath></text></svg>
+          <img src="img/logo-arvores.png" alt="">
         </div>
-        <div class="cartao-cad">
-          <img src="img/cad-quadrado.jpg" alt="" width="46" height="46">
-          <span><b>Projetos em AutoCAD</b>Precisão em cada detalhe</span>
-        </div>
+        <span class="legenda-foto"><i></i>Projeto executado</span>
       </div>
     </div>
   </section>
@@ -326,21 +326,49 @@ p{margin:0 0 1em}
   <!-- FAIXA -->
   <div class="faixa" aria-hidden="true">
     <div class="trilho">
-      <span>Projeto paisagístico</span><span><em>Implantação</em></span><span>Manutenção</span><span><em>Jardins verticais</em></span><span>Vasos &amp; varandas</span><span><em>Projetos em AutoCAD</em></span>
-      <span>Projeto paisagístico</span><span><em>Implantação</em></span><span>Manutenção</span><span><em>Jardins verticais</em></span><span>Vasos &amp; varandas</span><span><em>Projetos em AutoCAD</em></span>
+      <span>Projeto paisagístico</span><span>Visualização 3D</span><span>Implantação</span><span>Manutenção</span><span>Fachadas</span><span>Áreas de lazer</span>
+      <span>Projeto paisagístico</span><span>Visualização 3D</span><span>Implantação</span><span>Manutenção</span><span>Fachadas</span><span>Áreas de lazer</span>
     </div>
   </div>
 
-  <!-- MANIFESTO -->
-  <section class="sec manifesto">
-    <div class="wrap grade">
-      <div><span class="olho rv">Nosso olhar</span></div>
+  <!-- PROJETOS -->
+  <section class="sec projetos" id="projetos">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="olho rv">Projetos</span><h2 class="h2 rv d1">Jardins que <em>valorizam</em> a arquitetura</h2></div>
+        <p class="rv d2">Fachadas, áreas de lazer e corredores laterais. Cada espaço recebe espécies escolhidas para a luz, o clima e a rotina de quem vive ali.</p>
+      </div>
+      <div class="galeria">
+        <button class="proj p1 rv" data-i="0"><img src="img/fachada-executada.jpg" alt="Fachada com palmeiras, muro de pedra e iluminação de jardim" loading="lazy"><span class="info"><span><b>Fachada com iluminação</b><span>Palmeiras, pedra e luz rasante</span></span><span class="selo obra">Executado</span></span></button>
+        <button class="proj p2 rv d1" data-i="1"><img src="img/corredor-tropical.jpg" alt="Corredor lateral com helicônias e bananeiras ornamentais" loading="lazy"><span class="info"><span><b>Corredor tropical</b><span>Helicônias e folhagens</span></span><span class="selo d3">Projeto 3D</span></span></button>
+        <button class="proj p3 rv" data-i="2"><img src="img/fachada-3d.jpg" alt="Fachada moderna com ciprestes, bromélias e canteiro de suculentas" loading="lazy"><span class="info"><span><b>Entrada contemporânea</b><span>Ciprestes e suculentas</span></span><span class="selo d3">Projeto 3D</span></span></button>
+        <button class="proj p4 rv d1" data-i="3"><img src="img/lazer-piscina.jpg" alt="Área de lazer com piscina, gramado, palmeiras e redes" loading="lazy"><span class="info"><span><b>Área de lazer com piscina</b><span>Palmeiras, redes e estrelítzias</span></span><span class="selo d3">Projeto 3D</span></span></button>
+      </div>
+      <div class="galeria-rodape rv">
+        <span>Toque em uma imagem para ampliar.</span>
+        <a class="btn btn-claro" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>Mais projetos no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DO 3D AO JARDIM -->
+  <section class="sec tres" id="projeto-3d">
+    <div class="wrap tres-grade">
       <div>
-        <blockquote class="rv">Um bom jardim não é só bonito: ele conversa com a <em>arquitetura</em>, respeita a luz e o clima, e acompanha a <em>rotina</em> de quem vive ali.</blockquote>
-        <div class="cols">
-          <p class="rv d1">Por isso, cada trabalho da JS Paisagismo começa com escuta. Entendemos o seu espaço, o seu estilo e o tempo que você quer dedicar às plantas antes de desenhar qualquer canteiro.</p>
-          <p class="rv d2">O resultado são áreas verdes que valorizam o imóvel, criam lugares de convivência e continuam bonitas com o passar das estações.</p>
-        </div>
+        <span class="olho rv">Do projeto ao jardim</span>
+        <h2 class="h2 rv d1">Veja o seu jardim <em>antes de plantar</em></h2>
+        <span class="traco rv d1"></span>
+        <p class="rv d2">O projeto é desenhado em AutoCAD, com medidas exatas, e apresentado em imagens 3D realistas. Assim você aprova cada detalhe com segurança e a execução acontece sem improvisos.</p>
+        <ul class="checks">
+          <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Planta baixa com a posição de cada espécie, caminhos e canteiros</span></li>
+          <li class="rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Imagens 3D para visualizar o resultado e decidir com calma</span></li>
+          <li class="rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Projeto integrado à arquitetura da casa</span></li>
+        </ul>
+        <a class="btn btn-areia js-msg rv" href="https://wa.me/5519998433729" target="_blank" rel="noopener">Quero um projeto</a>
+      </div>
+      <div class="tres-foto rv d1">
+        <img src="img/fachada-3d.jpg" alt="Imagem 3D de projeto paisagístico para fachada moderna" loading="lazy">
+        <span class="legenda-foto"><i></i>Visualização 3D do projeto</span>
       </div>
     </div>
   </section>
@@ -350,51 +378,14 @@ p{margin:0 0 1em}
     <div class="wrap">
       <div class="cab">
         <div><span class="olho rv">Serviços</span><h2 class="h2 rv d1">Do traço ao <em>jardim pronto</em></h2></div>
-        <p class="rv d2">Atendemos residências, condomínios e espaços comerciais, cuidando de todas as etapas para que você só aproveite o resultado.</p>
+        <p class="rv d2">Atendimento a residências, condomínios e espaços comerciais, cuidando de todas as etapas para você só aproveitar o resultado.</p>
       </div>
       <ul class="lista">
-        <li class="item rv"><span class="n">01</span><h3>Projeto paisagístico</h3><p>Estudo do espaço, escolha das espécies e desenho completo do jardim, desenvolvido em AutoCAD com plantas claras e precisas.</p><figure><img src="img/projeto.jpg" alt="Projeto de jardim desenhado sobre a prancheta" loading="lazy"></figure></li>
-        <li class="item rv"><span class="n">02</span><h3>Implantação</h3><p>Preparo do solo, plantio, gramado e acabamentos, executados com cuidado para o jardim sair do papel exatamente como foi pensado.</p><figure><img src="img/implantacao.jpg" alt="Mãos com luvas plantando mudas" loading="lazy"></figure></li>
-        <li class="item rv"><span class="n">03</span><h3>Manutenção</h3><p>Podas, adubação e cuidados periódicos para manter o jardim saudável e bonito o ano inteiro.</p><figure><img src="img/manutencao.jpg" alt="Tesoura de poda aparando um arbusto" loading="lazy"></figure></li>
-        <li class="item rv"><span class="n">04</span><h3>Vasos e jardins verticais</h3><p>Varandas, sacadas e áreas compactas ganham vida com vasos, floreiras e paredes verdes.</p><figure><img src="img/vertical.jpg" alt="Varanda com jardim vertical e vasos de terracota" loading="lazy"></figure></li>
+        <li class="item rv"><h3>Projeto paisagístico</h3><p>Estudo do espaço, escolha das espécies e desenho completo do jardim em AutoCAD, com imagens 3D do resultado.</p></li>
+        <li class="item rv"><h3>Implantação</h3><p>Preparo do solo, plantio, gramado e acabamentos, executados para o jardim sair do papel exatamente como foi pensado.</p></li>
+        <li class="item rv"><h3>Manutenção</h3><p>Podas, adubação e cuidados periódicos para manter o jardim saudável e bonito o ano inteiro.</p></li>
+        <li class="item rv"><h3>Vasos e jardins verticais</h3><p>Varandas, sacadas e áreas compactas ganham vida com vasos, floreiras e paredes verdes.</p></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- AUTOCAD -->
-  <section class="sec cad" id="projeto">
-    <div class="wrap cad-grade">
-      <div>
-        <span class="olho rv">Projeto técnico</span>
-        <h2 class="h2 rv d1">Seu jardim, planejado no <em>AutoCAD</em></h2>
-        <p class="rv d2">Antes de qualquer muda ir para a terra, o projeto é modelado no computador. Assim você visualiza o resultado com antecedência e a execução acontece com precisão, sem improvisos.</p>
-        <ul class="checks">
-          <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Planta baixa com a posição de cada espécie, caminhos e canteiros</span></li>
-          <li class="rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Medidas exatas que facilitam o orçamento e a execução</span></li>
-          <li class="rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Projeto integrado à arquitetura da casa ou do empreendimento</span></li>
-        </ul>
-        <a class="btn btn-broto js-contato rv" href="#contato">Quero um projeto <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
-      </div>
-      <div class="cad-fotos rv d1">
-        <div class="grande"><img src="img/cad.jpg" alt="Profissional modelando um projeto de paisagismo no AutoCAD no escritório" loading="lazy"></div>
-        <div class="menor"><img src="img/cad-mesa.jpg" alt="Projeto de paisagismo em desenvolvimento na tela do computador" loading="lazy"></div>
-        <span class="etiqueta"><i></i>Projeto em desenvolvimento</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSPIRAÇÕES -->
-  <section class="sec" id="inspiracoes">
-    <div class="wrap">
-      <div class="cab">
-        <div><span class="olho rv">Inspirações</span><h2 class="h2 rv d1">Ideias para o <em>seu espaço</em></h2></div>
-        <p class="rv d2">Grandes ou pequenos, todos os espaços podem ganhar verde. Veja alguns estilos que podem inspirar o seu projeto.</p>
-      </div>
-      <div class="insp-grade">
-        <a class="card rv" href="#contato"><img src="img/hero-960.jpg" alt="Jardim tropical com palmeiras" loading="lazy"><div class="txt"><small>Áreas externas</small><h3>Jardins tropicais</h3><p>Folhagens marcantes, palmeiras e caminhos que convidam a passear.</p></div></a>
-        <a class="card rv d1" href="#contato"><img src="img/sobre.jpg" alt="Recanto de jardim com banco de madeira" loading="lazy"><div class="txt"><small>Convivência</small><h3>Recantos de sombra</h3><p>Espaços acolhedores para descansar, ler e receber.</p></div></a>
-        <a class="card rv d2" href="#contato"><img src="img/vertical.jpg" alt="Varanda com muitas plantas em vasos" loading="lazy"><div class="txt"><small>Apartamentos</small><h3>Varandas verdes</h3><p>Vasos e jardins verticais que transformam poucos metros.</p></div></a>
-      </div>
     </div>
   </section>
 
@@ -402,16 +393,16 @@ p{margin:0 0 1em}
   <section class="sec processo" id="processo">
     <div class="wrap proc-grade">
       <div class="fixo">
-        <span class="olho rv">Como trabalhamos</span>
+        <span class="olho rv">Como trabalho</span>
         <h2 class="h2 rv d1">Simples, claro e <em>do seu jeito</em></h2>
         <p class="rv d2">Um processo transparente, para você saber exatamente o que acontece em cada etapa.</p>
-        <a class="btn js-contato rv d3" href="#contato">Começar agora <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+        <a class="btn js-msg rv d3" href="https://wa.me/5519998433729" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Começar agora</a>
       </div>
       <ol class="passos">
         <li class="passo rv"><div><h3>Conversa inicial</h3><p>Você conta o que imagina e envia fotos do espaço. Entendemos seu estilo, sua rotina e seu orçamento.</p></div></li>
-        <li class="passo rv"><div><h3>Visita técnica</h3><p>Avaliamos no local a luz, o solo, as medidas e a arquitetura.</p></div></li>
-        <li class="passo rv"><div><h3>Projeto em AutoCAD</h3><p>Desenvolvemos o projeto com as espécies escolhidas e apresentamos a proposta detalhada.</p></div></li>
-        <li class="passo rv"><div><h3>Execução e cuidado</h3><p>Implantamos o jardim e orientamos os cuidados, com a opção de manutenção periódica.</p></div></li>
+        <li class="passo rv"><div><h3>Visita técnica</h3><p>Avaliação no local da luz, do solo, das medidas e da arquitetura.</p></div></li>
+        <li class="passo rv"><div><h3>Projeto em AutoCAD e 3D</h3><p>Desenvolvimento do projeto com as espécies escolhidas e apresentação em imagens 3D.</p></div></li>
+        <li class="passo rv"><div><h3>Execução e cuidado</h3><p>Implantação do jardim e orientação sobre os cuidados, com a opção de manutenção periódica.</p></div></li>
       </ol>
     </div>
   </section>
@@ -419,17 +410,17 @@ p{margin:0 0 1em}
   <!-- SOBRE -->
   <section class="sec sobre" id="sobre">
     <div class="wrap sobre-grade">
-      <figure class="rv"><div class="f1"><img src="img/cad-retrato.jpg" alt="Profissional da JS Paisagismo trabalhando em um projeto" loading="lazy"></div></figure>
+      <figure class="cartao-logo rv" style="margin:0"><img src="img/logo.png" alt="Logo Juliana Saes Paisagismo" width="266" height="247" loading="lazy"></figure>
       <div>
-        <span class="olho rv">Sobre a JS</span>
-        <h2 class="h2 rv d1">Técnica de escritório, <em>mão na terra</em></h2>
-        <p class="rv d2">A JS Paisagismo une o planejamento técnico do projeto ao conhecimento prático de quem acompanha o jardim de perto. Essa combinação garante projetos bonitos no papel e viáveis na prática.</p>
-        <p class="rv d2">Trabalhamos com atenção a cada detalhe e com respeito ao seu espaço, do primeiro esboço à última muda plantada.</p>
+        <span class="olho rv">Sobre</span>
+        <h2 class="h2 rv d1">Técnica de projeto, <em>mão na terra</em></h2>
+        <p class="rv d2">Juliana Saes une o planejamento técnico do projeto ao conhecimento prático de quem acompanha o jardim de perto. Essa combinação garante jardins bonitos no papel e viáveis na prática.</p>
+        <blockquote class="rv d2">Um bom jardim conversa com a arquitetura, respeita a luz e o clima, e acompanha a rotina de quem vive ali.</blockquote>
         <div class="valores">
-          <div class="valor rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 15 4 20 3c0 5-3 8-8 9z"/><path d="M12 15c0-4-2-6-7-7 0 4 2 6 7 7z"/></svg><b>Espécies certas</b><span>Plantas adequadas ao clima, à luz e à sua rotina.</span></div>
-          <div class="valor rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Projeto preciso</b><span>Planejamento técnico em AutoCAD antes da execução.</span></div>
-          <div class="valor rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg><b>Cuidado de perto</b><span>Atendimento próximo do início ao fim.</span></div>
-          <div class="valor rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><b>Proposta clara</b><span>Você sabe o que será feito em cada etapa.</span></div>
+          <div class="valor rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 15 4 20 3c0 5-3 8-8 9z"/><path d="M12 15c0-4-2-6-7-7 0 4 2 6 7 7z"/></svg><b>Espécies certas</b><span>Plantas adequadas ao clima, à luz e à sua rotina.</span></div>
+          <div class="valor rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><b>Projeto em 3D</b><span>Você visualiza o resultado antes da execução.</span></div>
+          <div class="valor rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg><b>Cuidado de perto</b><span>Atendimento próximo do início ao fim.</span></div>
+          <div class="valor rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><b>Proposta clara</b><span>Você sabe o que será feito em cada etapa.</span></div>
         </div>
       </div>
     </div>
@@ -441,25 +432,26 @@ p{margin:0 0 1em}
       <div class="insta-box rv">
         <div>
           <span class="olho">Instagram</span>
-          <h2>Acompanhe nossos <em>jardins</em> no dia a dia</h2>
+          <h2>Acompanhe os <em>jardins</em> no dia a dia</h2>
           <p>Projetos, bastidores e dicas de cuidado em <b>@js.paisagismo</b>.</p>
         </div>
-        <a class="btn" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>Seguir @js.paisagismo</a>
+        <a class="btn" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>Seguir</a>
       </div>
     </div>
   </section>
 
   <!-- CONTATO -->
   <section class="sec contato" id="contato">
-    <img class="fundo" src="img/hero-960.jpg" alt="" loading="lazy">
+    <img class="fundo" src="img/lazer-piscina.jpg" alt="" loading="lazy">
     <div class="wrap">
       <span class="olho rv">Contato</span>
-      <h2 class="rv d1">Vamos criar o seu <em>jardim?</em></h2>
-      <p class="rv d2">Conte um pouco sobre o seu espaço e o que você imagina. Respondemos com carinho e sem compromisso.</p>
+      <h2 class="rv d1">Vamos projetar o seu <em>jardim?</em></h2>
+      <p class="rv d2">Conte um pouco sobre o seu espaço e o que você imagina. A resposta vem com carinho e sem compromisso.</p>
       <div class="botoes rv d3">
-        <a class="btn btn-broto js-msg" href="https://ig.me/m/js.paisagismo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="js-msg-icone"><use href="#i-msg"/></svg><span class="js-msg-texto">Enviar mensagem</span></a>
+        <a class="btn btn-areia js-msg" href="https://wa.me/5519998433729" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Chamar no WhatsApp</a>
         <a class="btn btn-contorno" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>@js.paisagismo</a>
       </div>
+      <div class="numero rv d3">(19) 99843-3729</div>
     </div>
   </section>
 </main>
@@ -468,40 +460,39 @@ p{margin:0 0 1em}
   <div class="wrap">
     <div class="grade">
       <div>
-        <a class="marca" href="#inicio">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#d9e4b8"/><path d="M20 31c0-10 3.6-16.4 11-20-1.2 10-5 16.4-11 20zm0 0c0-7.4-2.4-12.4-8.6-15 0 7.6 2.6 12.4 8.6 15z" fill="#18291c"/></svg>
-          <span><b>JS Paisagismo</b><small>Projetos &amp; jardins</small></span>
-        </a>
-        <p style="margin-top:18px;max-width:34ch">Projeto, implantação e manutenção de jardins, com planejamento técnico em AutoCAD.</p>
+        <img class="logo-rodape" src="img/logo.png" alt="Juliana Saes Paisagismo" width="266" height="247" loading="lazy">
+        <p style="margin-top:14px;max-width:34ch">Projeto, implantação e manutenção de jardins, com planejamento em AutoCAD e visualização 3D.</p>
       </div>
-      <div><h4>Navegação</h4><ul><li><a href="#servicos">Serviços</a></li><li><a href="#projeto">Projeto em AutoCAD</a></li><li><a href="#processo">Como trabalhamos</a></li><li><a href="#sobre">Sobre</a></li></ul></div>
-      <div><h4>Contato</h4><ul><li><a class="js-msg" href="https://ig.me/m/js.paisagismo" target="_blank" rel="noopener">Enviar mensagem</a></li><li><a href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener">Instagram @js.paisagismo</a></li></ul></div>
+      <div><h4>Navegação</h4><ul><li><a href="#projetos">Projetos</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#processo">Como trabalho</a></li><li><a href="#sobre">Sobre</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a class="js-msg" href="https://wa.me/5519998433729" target="_blank" rel="noopener">WhatsApp (19) 99843-3729</a></li><li><a href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener">Instagram @js.paisagismo</a></li></ul></div>
     </div>
-    <div class="base"><span>© <span id="ano">2026</span> JS Paisagismo. Todos os direitos reservados.</span><span>Imagens ilustrativas.</span></div>
+    <div class="base"><span>© <span id="ano">2026</span> Juliana Saes Paisagismo. Todos os direitos reservados.</span><span>Imagens 3D ilustram projetos desenvolvidos.</span></div>
   </div>
 </footer>
 
-<a class="flutuante js-msg" id="flutuante" href="https://ig.me/m/js.paisagismo" target="_blank" rel="noopener" aria-label="Enviar mensagem"><svg viewBox="0 0 24 24" aria-hidden="true" class="js-msg-icone"><use href="#i-msg"/></svg></a>
+<a class="flutuante js-msg" id="flutuante" href="https://wa.me/5519998433729" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg></a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Projeto ampliado">
+  <button class="fechar" id="lb-fechar" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="ant" id="lb-ant" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <img id="lb-img" alt="">
+  <button class="prox" id="lb-prox" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5l7 7-7 7"/></svg></button>
+  <p id="lb-txt"></p>
+</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
-  <symbol id="i-msg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
   <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></symbol>
 </svg>
 
 <script>
+{
   // ===== CONTATO =====
-  // Hoje as mensagens vão para o Direct do Instagram (@js.paisagismo).
-  // Para usar WhatsApp, preencha o número: 55 + DDD + número, só dígitos. Ex.: "5511987654321"
-  var WHATSAPP_NUMERO = "";
-  var WHATSAPP_MENSAGEM = "Olá! Vi o site da JS Paisagismo e gostaria de um orçamento.";
-
-  if (WHATSAPP_NUMERO) {
-    var wa = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
-    document.querySelectorAll(".js-msg").forEach(function (a) { a.href = wa; });
-    document.querySelectorAll(".js-msg-icone use").forEach(function (u) { u.setAttribute("href", "#i-whats"); });
-    document.querySelectorAll(".js-msg-texto").forEach(function (s) { s.textContent = "Chamar no WhatsApp"; });
-  }
+  // WhatsApp: 55 + DDD + número, só dígitos.
+  var WHATSAPP_NUMERO = "5519998433729";
+  var WHATSAPP_MENSAGEM = "Olá, Juliana! Vi o seu site e gostaria de um orçamento.";
+  var wa = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
+  document.querySelectorAll(".js-msg").forEach(function (a) { a.href = wa; });
   document.getElementById("ano").textContent = new Date().getFullYear();
 
   // Menu do celular
@@ -531,6 +522,31 @@ p{margin:0 0 1em}
     }, { rootMargin: "0px 0px -10% 0px" });
     rv.forEach(function (el) { io.observe(el); });
   } else { rv.forEach(function (el) { el.classList.add("on"); }); }
+
+  // Galeria ampliada
+  var projs = Array.prototype.slice.call(document.querySelectorAll(".proj"));
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbTxt = document.getElementById("lb-txt");
+  var atual = 0, origem = null;
+  function mostrar(i) {
+    atual = (i + projs.length) % projs.length;
+    var p = projs[atual], img = p.querySelector("img");
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    lbTxt.textContent = p.querySelector("b").textContent + " · " + p.querySelector(".selo").textContent;
+  }
+  function abrir(i) { origem = document.activeElement; mostrar(i); lb.classList.add("ver"); document.body.style.overflow = "hidden"; document.getElementById("lb-fechar").focus(); }
+  function fechar() { lb.classList.remove("ver"); document.body.style.overflow = ""; if (origem) origem.focus(); }
+  projs.forEach(function (p, i) { p.addEventListener("click", function () { abrir(i); }); });
+  document.getElementById("lb-fechar").addEventListener("click", fechar);
+  document.getElementById("lb-ant").addEventListener("click", function () { mostrar(atual - 1); });
+  document.getElementById("lb-prox").addEventListener("click", function () { mostrar(atual + 1); });
+  lb.addEventListener("click", function (e) { if (e.target === lb) fechar(); });
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("ver")) return;
+    if (e.key === "Escape") fechar();
+    if (e.key === "ArrowLeft") mostrar(atual - 1);
+    if (e.key === "ArrowRight") mostrar(atual + 1);
+  });
+}
 </script>
 </body>
 </html>
