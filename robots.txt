@@ -1,0 +1,5 @@
+# Site modelo: a não indexação é feita pela meta tag e pelo cabeçalho X-Robots-Tag
+# (netlify.toml). Os robôs precisam conseguir ler a página para respeitar o "noindex",
+# por isso não bloqueamos aqui.
+User-agent: *
+Allow: /

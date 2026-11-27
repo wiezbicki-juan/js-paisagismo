@@ -1,2 +1,23 @@
-# js-paisagismo
-Site modelo da JS Paisagismo
+# JS Paisagismo — site modelo
+
+Site de uma página (HTML + CSS puro, sem build), publicado na Netlify.
+
+**É um modelo:** está com `noindex` (meta tag em `index.html` e cabeçalho `X-Robots-Tag` em `netlify.toml`).
+Todo texto marcado com o selo laranja **PROVISÓRIO** (e contorno tracejado) é exemplo.
+
+## Arquivos
+- `index.html` — a página inteira (estilos e script dentro do próprio arquivo).
+- `netlify.toml` — configuração da Netlify (publica a raiz, cabeçalho noindex).
+- `robots.txt`
+
+## O que trocar quando chegar o material
+1. **WhatsApp:** no fim do `index.html`, `WHATSAPP_NUMERO = "5500000000000"` → `55` + DDD + número, só dígitos.
+2. **Textos provisórios:** procurar `class="prov"` e `class="selo"` no `index.html`; trocar o texto e apagar a marcação.
+3. **Fotos:** criar a pasta `fotos/`, colocar as imagens (JPG/WebP, ~1600px de largura, idealmente < 300 KB) e trocar cada
+   `<div class="foto">…</div>` por
+   `<img class="foto" src="fotos/nome.jpg" alt="descrição" loading="lazy" style="object-fit:cover;border:0;padding:0">`.
+4. **Faixa laranja do topo e rodapé** ("site modelo"): apagar quando for oficial.
+
+## Quando o site for oficial (domínio próprio)
+- Remover `<meta name="robots" ...>` do `index.html` e o `X-Robots-Tag` do `netlify.toml`.
+- Na Netlify: *Domain management → Add a domain* (ex.: `jspaisagismo.com.br`) e seguir as instruções de DNS no Registro.br.
