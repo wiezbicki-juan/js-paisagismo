@@ -20,3 +20,11 @@ Colocar a foto em `img/` (JPG, 1200–1920 px de largura, idealmente < 300 KB) e
 - Remover `<meta name="robots" ...>` do `index.html` e o `X-Robots-Tag` do `netlify.toml`.
 - Atualizar `og:url` e `og:image` no `index.html` para o novo domínio.
 - Na Netlify: *Domain management → Add a domain* (ex.: `jspaisagismo.com.br`) e seguir as instruções de DNS.
+
+## Como colaborar (sem custo)
+A Netlify (plano grátis, repositório privado) só publica alterações enviadas pela dona da conta.
+Por isso, quem colabora **não envia direto** para o branch publicado (`claude/determined-mccarthy-52hjzl`):
+
+1. Faça as alterações num branch próprio (ex.: no Claude Code, deixe ele criar o branch da sessão).
+2. Abra um **pull request** para `claude/determined-mccarthy-52hjzl` no GitHub.
+3. A dona do repositório revisa e toca em **Merge** — a Netlify publica sozinha em ~1 minuto.
