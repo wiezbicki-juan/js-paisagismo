@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Enquanto o site não for oficial, fica fora do Google. Remover esta linha (e o X-Robots-Tag do netlify.toml) ao publicar no domínio próprio. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Projetos · Juliana Saes Paisagismo</title>
+<meta name="description" content="Portfólio de projetos paisagísticos: residências, fachadas, áreas de lazer e jardins de passagem.">
+<meta name="theme-color" content="#f7eedf">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jspaisagismo.netlify.app/projetos.html">
+<meta property="og:title" content="Projetos · Juliana Saes Paisagismo">
+<meta property="og:description" content="Portfólio de projetos paisagísticos: residências, fachadas, áreas de lazer e jardins de passagem.">
+<meta property="og:image" content="https://jspaisagismo.netlify.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html" aria-label="Juliana Saes Paisagismo, início">
+      <img src="img/logo-arvores.png" alt="" width="58" height="46">
+      <span><b>Juliana Saes</b><small>Paisagismo</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="projetos.html" aria-current="page">Projetos</a></li><li><a href="escritorio.html">Escritório</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html">Contato</a></li>
+        <li><a class="btn js-msg" href="https://wa.me/5519998433729"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>WhatsApp</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <section class="pag-topo">
+    <div class="wrap grade">
+      <div><span class="olho rv">Portfólio</span><h1 class="rv d1">Projetos <em>selecionados</em></h1></div>
+      <p class="lead rv d2">Residências, áreas de lazer, fachadas e jardins de passagem. Cada projeto parte de um estudo cuidadoso do lugar e de quem vive nele.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="filtros rv" role="group" aria-label="Filtrar projetos">
+        <button data-f="todos" aria-pressed="true">Todos</button>
+        <button data-f="fachada" aria-pressed="false">Fachadas</button>
+        <button data-f="lazer" aria-pressed="false">Áreas de lazer</button>
+        <button data-f="corredor" aria-pressed="false">Corredores e pátios</button>
+        <button data-f="executado" aria-pressed="false">Executados</button>
+        <button data-f="3d" aria-pressed="false">Projetos 3D</button>
+      </div>
+      <div class="portfolio">
+        <a class="card-proj rv" href="projeto-residencia-luz-de-pedra.html" data-cat="residencial fachada executado">
+          <div class="foto"><img src="img/fachada-executada.jpg" alt="Fachada em pedra natural com palmeiras esculturais e luz rasante que desenha o jardim ao anoitecer." loading="lazy"><span class="tag">Executado</span></div>
+          <div class="linha1"><h3>Residência <em>Luz de Pedra</em></h3><span class="ano">2025</span></div>
+          <div class="meta">Campinas, SP · Projeto, iluminação e implantação</div>
+        </a>
+        <a class="card-proj rv" href="projeto-corredor-tropical.html" data-cat="residencial corredor 3d">
+          <div class="foto"><img src="img/corredor-tropical.jpg" alt="Uma passagem lateral estreita transformada em percurso exuberante, com helicônias e folhagens altas." loading="lazy"><span class="tag">Projeto 3D</span></div>
+          <div class="linha1"><h3>Corredor <em>Tropical</em></h3><span class="ano">2025</span></div>
+          <div class="meta">Valinhos, SP · Projeto paisagístico</div>
+        </a>
+        <a class="card-proj rv" href="projeto-casa-cipreste.html" data-cat="residencial fachada 3d">
+          <div class="foto"><img src="img/fachada-3d.jpg" alt="Entrada contemporânea com ciprestes verticais, bromélias e um canteiro de suculentas que conduz ao acesso." loading="lazy"><span class="tag">Projeto 3D</span></div>
+          <div class="linha1"><h3>Casa <em>Cipreste</em></h3><span class="ano">2026</span></div>
+          <div class="meta">Vinhedo, SP · Projeto e iluminação</div>
+        </a>
+        <a class="card-proj rv" href="projeto-patio-da-piscina.html" data-cat="residencial lazer 3d">
+          <div class="foto"><img src="img/lazer-piscina.jpg" alt="Área de lazer com palmeiras, redes e estrelítzias: um refúgio tropical a poucos passos da sala." loading="lazy"><span class="tag">Projeto 3D</span></div>
+          <div class="linha1"><h3>Pátio da <em>Piscina</em></h3><span class="ano">2026</span></div>
+          <div class="meta">Indaiatuba, SP · Projeto paisagístico</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec chamada">
+    <img class="fundo" src="img/corredor-tropical.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <span class="olho rv">Agende uma conversa</span>
+      <h2 class="rv d1">O próximo projeto pode ser o <em>seu</em></h2>
+      <p class="rv d2">Conte um pouco sobre o seu espaço e o que você imagina. Cada projeto começa com uma boa conversa.</p>
+      <div class="botoes rv d3">
+        <a class="btn btn-areia" href="contato.html">Enviar briefing</a>
+        <a class="btn btn-contorno js-msg" href="https://wa.me/5519998433729"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <img class="logo-rodape" src="img/logo.png" alt="Juliana Saes Paisagismo" width="266" height="247" loading="lazy">
+        <p style="margin-top:14px;max-width:34ch">Projetos paisagísticos autorais, desenvolvidos em AutoCAD e apresentados em 3D, da concepção ao jardim pronto.</p>
+      </div>
+      <div><h4>Site</h4><ul><li><a href="index.html">Início</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="escritorio.html">Escritório</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a class="js-msg" href="https://wa.me/5519998433729">(19) 99843-3729</a></li><li><a href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener">@js.paisagismo</a></li><li><a href="contato.html">Enviar briefing</a></li></ul></div>
+      <div><h4>Atendimento</h4><ul><li>Campinas e região</li><li>Segunda a sexta, 9h às 18h</li><li>Visitas com hora marcada</li></ul></div>
+    </div>
+    <div class="base"><span>© <span class="js-ano">2026</span> Juliana Saes Paisagismo. Todos os direitos reservados.</span><span>Imagens 3D ilustram projetos desenvolvidos pelo escritório.</span></div>
+  </div>
+</footer>
+
+<a class="flutuante js-msg" id="flutuante" href="https://wa.me/5519998433729" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></symbol>
+</svg>
+<script src="js/site.js"></script>
+</body>
+</html>

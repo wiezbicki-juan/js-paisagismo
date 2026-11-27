@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Enquanto o site não for oficial, fica fora do Google. Remover esta linha (e o X-Robots-Tag do netlify.toml) ao publicar no domínio próprio. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Contato · Juliana Saes Paisagismo</title>
+<meta name="description" content="Envie um briefing ou fale pelo WhatsApp com o escritório Juliana Saes Paisagismo.">
+<meta name="theme-color" content="#f7eedf">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jspaisagismo.netlify.app/contato.html">
+<meta property="og:title" content="Contato · Juliana Saes Paisagismo">
+<meta property="og:description" content="Envie um briefing ou fale pelo WhatsApp com o escritório Juliana Saes Paisagismo.">
+<meta property="og:image" content="https://jspaisagismo.netlify.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html" aria-label="Juliana Saes Paisagismo, início">
+      <img src="img/logo-arvores.png" alt="" width="58" height="46">
+      <span><b>Juliana Saes</b><small>Paisagismo</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="projetos.html">Projetos</a></li><li><a href="escritorio.html">Escritório</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html" aria-current="page">Contato</a></li>
+        <li><a class="btn js-msg" href="https://wa.me/5519998433729"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>WhatsApp</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <section class="pag-topo">
+    <div class="wrap grade">
+      <div><span class="olho rv">Contato</span><h1 class="rv d1">Vamos conversar sobre o seu <em>jardim</em></h1></div>
+      <p class="lead rv d2">Conte um pouco sobre o seu espaço. Respondemos pessoalmente em até um dia útil para agendar uma conversa.</p>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap contato-grade">
+      <div>
+        <div class="canais rv">
+          <a class="canal js-msg" href="https://wa.me/5519998433729"><span><small>WhatsApp</small><b>(19) 99843-3729</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <a class="canal" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><span><small>Instagram</small><b>@js.paisagismo</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <div class="canal"><span><small>Atendimento</small><b>Segunda a sexta, 9h às 18h</b></span></div>
+          <div class="canal"><span><small>Região</small><b>Campinas e região</b></span></div>
+        </div>
+        <p class="rv" style="margin-top:28px;color:var(--suave)">Visitas técnicas e reuniões no escritório acontecem com hora marcada.</p>
+      </div>
+
+      <form class="form rv d1" id="briefing">
+        <span class="olho">Briefing</span>
+        <h2 style="margin-top:12px">Conte sobre o seu <em>projeto</em></h2>
+        <p>Ao enviar, abrimos o WhatsApp com as suas respostas organizadas, prontas para mandar.</p>
+        <div class="campos">
+          <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+          <div class="campo"><label for="f-cidade">Cidade / bairro</label><input id="f-cidade" name="cidade" autocomplete="address-level2"></div>
+          <fieldset class="campo cheio"><legend>Tipo de imóvel</legend><div class="opcoes"><label><input type="radio" name="imovel" value="Casa" required><span>Casa</span></label><label><input type="radio" name="imovel" value="Casa em condomínio"><span>Casa em condomínio</span></label><label><input type="radio" name="imovel" value="Apartamento / cobertura"><span>Apartamento / cobertura</span></label><label><input type="radio" name="imovel" value="Sítio ou chácara"><span>Sítio ou chácara</span></label><label><input type="radio" name="imovel" value="Comercial / corporativo"><span>Comercial / corporativo</span></label></div></fieldset>
+          <fieldset class="campo cheio"><legend>Serviços de interesse</legend><div class="opcoes"><label><input type="checkbox" name="servico" value="Projeto paisagístico"><span>Projeto paisagístico</span></label><label><input type="checkbox" name="servico" value="Iluminação"><span>Iluminação</span></label><label><input type="checkbox" name="servico" value="Implantação"><span>Implantação</span></label><label><input type="checkbox" name="servico" value="Manutenção"><span>Manutenção</span></label><label><input type="checkbox" name="servico" value="Consultoria"><span>Consultoria</span></label><label><input type="checkbox" name="servico" value="Vasos e jardins verticais"><span>Vasos e jardins verticais</span></label></div></fieldset>
+          <div class="campo"><label for="f-fase">Fase da obra</label><select id="f-fase" name="fase"><option value="">Selecione</option><option>Ainda no projeto de arquitetura</option><option>Obra em andamento</option><option>Obra finalizada</option><option>Jardim existente para reformar</option></select></div>
+          <div class="campo"><label for="f-area">Área aproximada do jardim</label><select id="f-area" name="area"><option value="">Selecione</option><option>Até 50 m²</option><option>50 a 150 m²</option><option>150 a 400 m²</option><option>Acima de 400 m²</option><option>Não sei informar</option></select></div>
+          <div class="campo"><label for="f-arq">Arquiteto(a) responsável</label><input id="f-arq" name="arquiteto" placeholder="Opcional"></div>
+          <div class="campo"><label for="f-orig">Como conheceu o escritório</label><select id="f-orig" name="origem"><option value="">Selecione</option><option>Instagram</option><option>Indicação</option><option>Arquiteto(a)</option><option>Google</option><option>Outro</option></select></div>
+          <div class="campo cheio"><label for="f-msg">Conte o que você imagina</label><textarea id="f-msg" name="mensagem" placeholder="Estilo, usos do espaço, plantas de que gosta, prazos..."></textarea></div>
+        </div>
+        <div class="rodape-form">
+          <small>Suas informações são usadas apenas para responder ao seu contato.</small>
+          <button class="btn" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Enviar pelo WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <img class="logo-rodape" src="img/logo.png" alt="Juliana Saes Paisagismo" width="266" height="247" loading="lazy">
+        <p style="margin-top:14px;max-width:34ch">Projetos paisagísticos autorais, desenvolvidos em AutoCAD e apresentados em 3D, da concepção ao jardim pronto.</p>
+      </div>
+      <div><h4>Site</h4><ul><li><a href="index.html">Início</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="escritorio.html">Escritório</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a class="js-msg" href="https://wa.me/5519998433729">(19) 99843-3729</a></li><li><a href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener">@js.paisagismo</a></li><li><a href="contato.html">Enviar briefing</a></li></ul></div>
+      <div><h4>Atendimento</h4><ul><li>Campinas e região</li><li>Segunda a sexta, 9h às 18h</li><li>Visitas com hora marcada</li></ul></div>
+    </div>
+    <div class="base"><span>© <span class="js-ano">2026</span> Juliana Saes Paisagismo. Todos os direitos reservados.</span><span>Imagens 3D ilustram projetos desenvolvidos pelo escritório.</span></div>
+  </div>
+</footer>
+
+<a class="flutuante js-msg" id="flutuante" href="https://wa.me/5519998433729" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></symbol>
+</svg>
+<script src="js/site.js"></script>
+</body>
+</html>
