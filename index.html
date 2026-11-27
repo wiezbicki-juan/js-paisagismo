@@ -2,407 +2,535 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- SITE MODELO: noindex impede que buscadores indexem. Remover quando o site for oficial. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Enquanto o site não for oficial, fica fora do Google. Remover esta linha (e o X-Robots-Tag do netlify.toml) ao publicar no domínio próprio. -->
 <meta name="robots" content="noindex, nofollow">
-<title>JS Paisagismo — Projeto, implantação e manutenção de jardins</title>
-<meta name="description" content="JS Paisagismo: projeto, implantação e manutenção de jardins residenciais e comerciais.">
-<meta name="theme-color" content="#1f3320">
-<meta property="og:title" content="JS Paisagismo">
-<meta property="og:description" content="Projeto, implantação e manutenção de jardins.">
-<meta property="og:image" content="img/hero.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f3320'/%3E%3Cpath d='M16 25c0-8 3-13 9-16-1 8-4 13-9 16zm0 0c0-6-2-10-7-12 0 6 2 10 7 12z' fill='%23cfdcae'/%3E%3C/svg%3E">
+<title>JS Paisagismo · Projetos e jardins</title>
+<meta name="description" content="JS Paisagismo: projetos paisagísticos desenvolvidos em AutoCAD, implantação e manutenção de jardins.">
+<meta name="theme-color" content="#18291c">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jspaisagismo.netlify.app/">
+<meta property="og:title" content="JS Paisagismo · Projetos e jardins">
+<meta property="og:description" content="Do projeto em AutoCAD ao jardim pronto: paisagismo pensado para o seu espaço.">
+<meta property="og:image" content="https://jspaisagismo.netlify.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2318291c'/%3E%3Cpath d='M16 25c0-8 3-13 9-16-1 8-4 13-9 16zm0 0c0-6-2-10-7-12 0 6 2 10 7 12z' fill='%23d9e4b8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero.jpg" imagesrcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" imagesizes="100vw" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg" imagesrcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
 <style>
 :root{
-  --floresta:#1f3320;
-  --verde:#3f6b3a;
-  --musgo:#7d9a5b;
-  --salvia:#cfdcae;
-  --terra:#9a6440;
-  --argila:#c98f5f;
-  --areia:#efe6d6;
-  --creme:#faf7f1;
-  --tinta:#1d1b17;
-  --suave:#5f594f;
-  --linha:rgba(31,51,32,.12);
-  --aviso:#b5651d;
-  --raio:18px;
-  --sombra:0 18px 40px -18px rgba(31,51,32,.35);
-  --serif:"Fraunces",Georgia,"Times New Roman",serif;
-  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --linho:#f5efe4;
+  --linho-2:#ece3d3;
+  --papel:#fbf8f2;
+  --floresta:#18291c;
+  --verde:#2c4a31;
+  --musgo:#7b9461;
+  --broto:#d9e4b8;
+  --terracota:#b5653d;
+  --argila:#d89a6d;
+  --tinta:#141a15;
+  --suave:#5d6158;
+  --linha:rgba(24,41,28,.14);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;font-family:var(--sans);color:var(--tinta);background:var(--creme);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:16.5px}
-img{max-width:100%;display:block}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--linho);color:var(--tinta);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
-h2{font-size:clamp(2rem,4.6vw,3rem);color:var(--floresta)}
-h3{font-size:1.3rem;color:var(--floresta)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.015em;margin:0}
+em{font-style:italic}
 p{margin:0 0 1em}
-.container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
-section{padding:clamp(72px,10vw,120px) 0}
-.rotulo{display:inline-flex;align-items:center;gap:10px;font:600 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--terra);margin-bottom:18px}
-.rotulo::before{content:"";width:28px;height:1.5px;background:currentColor}
-.lead{font-size:1.08rem;color:var(--suave);max-width:620px}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.olho{display:inline-flex;align-items:center;gap:10px;font:600 .74rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--terracota)}
+.olho::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.h2{font-size:clamp(2.6rem,6vw,4.8rem)}
+.h2 em{color:var(--verde)}
+.sec{padding:clamp(84px,11vw,150px) 0}
 
-/* ---------- Conteúdo provisório ---------- */
-.faixa-modelo{background:var(--floresta);color:#e9eedd;text-align:center;font-size:.8rem;padding:7px 16px;letter-spacing:.01em}
-.faixa-modelo b{color:#fff}
-.prov{text-decoration:underline dotted var(--argila) 1.5px;text-underline-offset:4px}
-.selo{display:inline-block;font:600 .62rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--aviso);padding:4px 7px;border-radius:999px;vertical-align:middle;margin-left:6px;white-space:nowrap;text-decoration:none}
-.ilustrativa{position:absolute;left:12px;bottom:12px;font:500 .68rem/1 var(--sans);color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);padding:5px 8px;border-radius:999px;letter-spacing:.02em}
+/* Botões */
+.btn{--bg:var(--floresta);--fg:#fff;display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;background:var(--bg);color:var(--fg);font:600 .95rem/1 var(--sans);text-decoration:none;border:1.5px solid var(--bg);transition:transform .35s var(--ease),background .3s,color .3s,border-color .3s}
+.btn:hover{transform:translateY(-3px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn .seta{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-right:-12px;transition:transform .35s var(--ease)}
+.btn:hover .seta{transform:rotate(-45deg)}
+.btn-claro{--bg:transparent;--fg:var(--floresta);border-color:var(--linha)}
+.btn-claro:hover{border-color:var(--floresta)}
+.btn-broto{--bg:var(--broto);--fg:var(--floresta)}
+.btn-broto .seta{background:rgba(24,41,28,.1)}
+.btn-contorno{--bg:transparent;--fg:#fff;border-color:rgba(255,255,255,.35)}
+.btn-contorno:hover{border-color:#fff}
 
-/* ---------- Cabeçalho ---------- */
-header{position:sticky;top:0;z-index:30;background:rgba(250,247,241,.9);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--linha)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--floresta);font:600 1.25rem var(--serif)}
-.logo svg{width:34px;height:34px;flex:none}
-.logo small{display:block;font:500 .62rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-top:3px}
-.menu{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
-.menu a{text-decoration:none;font-size:.93rem;font-weight:500;color:var(--tinta);opacity:.8}
-.menu a:hover{opacity:1;color:var(--verde)}
-.menu .btn{padding:10px 18px;font-size:.9rem;opacity:1;color:#fff}
-@media (max-width:860px){.menu{display:none}}
+/* Cabeçalho */
+.topo{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,transform .4s}
+.topo.solido{background:rgba(245,239,228,.86);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px);box-shadow:0 1px 0 var(--linha)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--floresta)}
+.marca svg{width:40px;height:40px;flex:none}
+.marca b{display:block;font:400 1.6rem/1 var(--serif);letter-spacing:-.01em}
+.marca small{display:block;font:600 .6rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--terracota);margin-top:4px}
+.menu{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
+.menu a{text-decoration:none;font-weight:500;font-size:.93rem;position:relative}
+.menu a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1.5px;background:var(--terracota);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.menu a:not(.btn):hover::after{transform:scaleX(1)}
+.menu .btn{padding:12px 20px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--linha);background:transparent;cursor:pointer;place-items:center;color:var(--floresta)}
+.burger span{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:transform .3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.aberto .burger span{background:transparent}
+.aberto .burger span::before{transform:translateY(6px) rotate(45deg)}
+.aberto .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:900px){
+  .burger{display:grid}
+  .menu{position:fixed;inset:78px 0 auto;flex-direction:column;align-items:flex-start;gap:6px;padding:22px clamp(18px,4vw,40px) 30px;background:var(--linho);border-bottom:1px solid var(--linha);transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+  .menu a:not(.btn){font:400 2rem/1.3 var(--serif)}
+  .menu li:last-child{margin-top:14px}
+  .aberto .menu{opacity:1;transform:none;pointer-events:auto}
+  .aberto{background:var(--linho)}
+}
 
-/* ---------- Botões ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;font:600 .98rem var(--sans);text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;border:0;cursor:pointer}
-.btn:hover{transform:translateY(-2px)}
-.btn svg{width:20px;height:20px;flex:none}
-.btn-whats{background:#25d366;color:#08311a;box-shadow:0 10px 24px -8px rgba(37,211,102,.6)}
-.btn-escuro{background:var(--floresta);color:#fff}
-.btn-escuro:hover{background:var(--verde)}
-.btn-vidro{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(6px)}
-.btn-linha{background:transparent;color:var(--floresta);border:1.5px solid var(--floresta)}
+/* Abertura */
+.hero{padding:118px 0 0;position:relative}
+.hero-grade{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:end;min-height:calc(100svh - 118px)}
+.hero-texto{padding-bottom:clamp(40px,7vw,96px)}
+.hero h1{font-size:clamp(3.4rem,8.4vw,7.6rem);margin:22px 0 26px;color:var(--floresta)}
+.hero h1 em{color:var(--terracota)}
+.hero p.sub{font-size:clamp(1.04rem,1.6vw,1.18rem);color:var(--suave);max-width:470px;margin-bottom:34px}
+.hero .botoes{display:flex;flex-wrap:wrap;gap:12px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:44px;padding-top:24px;border-top:1px solid var(--linha);font-size:.86rem;color:var(--suave)}
+.hero-tags span{display:inline-flex;align-items:center;gap:8px}
+.hero-tags span::before{content:"✦";color:var(--musgo);font-size:.75rem}
+.hero-foto{position:relative;align-self:stretch;display:flex;align-items:flex-end}
+.arco{position:relative;width:100%;height:min(78svh,760px);border-radius:999px 999px 0 0;overflow:hidden;background:var(--verde)}
+.arco img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:respira 18s ease-in-out infinite alternate}
+@keyframes respira{to{transform:scale(1.14) translate(-1.5%,-1%)}}
+.selo-gira{position:absolute;left:-46px;top:22%;width:132px;height:132px;border-radius:50%;background:var(--broto);display:grid;place-items:center;box-shadow:0 20px 40px -20px rgba(24,41,28,.5)}
+.selo-gira svg.texto{position:absolute;inset:0;width:100%;height:100%;animation:gira 22s linear infinite}
+.selo-gira svg.folha{width:38px;height:38px}
+@keyframes gira{to{transform:rotate(360deg)}}
+.cartao-cad{position:absolute;right:-18px;bottom:44px;display:flex;align-items:center;gap:12px;background:var(--papel);padding:10px 18px 10px 10px;border-radius:999px;box-shadow:0 24px 50px -24px rgba(24,41,28,.55);font-size:.82rem;line-height:1.3}
+.cartao-cad img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.cartao-cad b{display:block;font-size:.9rem;color:var(--floresta)}
+@media (max-width:900px){
+  .hero{padding-top:100px}
+  .hero-grade{grid-template-columns:1fr;min-height:0}
+  .hero-texto{padding-bottom:0}
+  .arco{height:min(70svh,560px)}
+  .selo-gira{left:auto;right:14px;top:-50px;width:112px;height:112px}
+  .cartao-cad{right:12px;bottom:20px}
+}
 
-/* ---------- Abertura ---------- */
-.hero{position:relative;min-height:min(88vh,820px);display:flex;align-items:flex-end;color:#fff;padding:0;overflow:hidden;background:linear-gradient(160deg,#2b4a2a,#1f3320 60%,#5a3f2a)}
-.hero img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,32,20,.15) 0%,rgba(20,32,20,.35) 45%,rgba(16,26,16,.88) 100%),linear-gradient(90deg,rgba(16,26,16,.55),transparent 65%);z-index:1}
-.hero .container{position:relative;z-index:2;padding-bottom:clamp(48px,8vw,96px);padding-top:120px}
-.hero .rotulo{color:var(--salvia)}
-.hero h1{font-size:clamp(2.6rem,7.2vw,5.4rem);max-width:15ch;margin-bottom:.35em;font-weight:400}
-.hero h1 em{font-style:italic;color:var(--salvia)}
-.hero p{font-size:clamp(1.02rem,2vw,1.2rem);max-width:540px;color:#e6ebde;margin-bottom:32px}
-.botoes{display:flex;flex-wrap:wrap;gap:12px}
-.hero .ilustrativa{left:auto;right:16px;bottom:16px;z-index:2}
+/* Faixa animada */
+.faixa{background:var(--floresta);color:var(--broto);overflow:hidden;padding:26px 0;white-space:nowrap}
+.faixa .trilho{display:inline-flex;gap:46px;animation:corre 38s linear infinite;font:400 clamp(1.7rem,3.4vw,2.6rem)/1 var(--serif)}
+.faixa span{display:inline-flex;align-items:center;gap:46px}
+.faixa span::after{content:"✦";font-size:.55em;color:var(--argila)}
+.faixa em{color:#fff}
+@keyframes corre{to{transform:translateX(-50%)}}
 
-/* ---------- Diferenciais ---------- */
-.diferenciais{padding:0;background:var(--floresta);color:#e6ebde}
-.diferenciais ul{list-style:none;margin:0;padding:28px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.diferenciais li{display:flex;gap:14px;align-items:flex-start;font-size:.93rem;line-height:1.45}
-.diferenciais svg{width:26px;height:26px;stroke:var(--salvia);flex:none;margin-top:2px}
-.diferenciais b{display:block;color:#fff;font-weight:600;margin-bottom:2px}
-@media (max-width:900px){.diferenciais ul{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.diferenciais ul{grid-template-columns:1fr;gap:18px}}
+/* Manifesto */
+.manifesto{background:var(--papel)}
+.manifesto .grade{display:grid;grid-template-columns:.8fr 2fr;gap:clamp(28px,6vw,90px)}
+.manifesto blockquote{margin:0;font:400 clamp(1.9rem,4vw,3.3rem)/1.14 var(--serif);color:var(--floresta);letter-spacing:-.01em}
+.manifesto blockquote em{color:var(--terracota)}
+.manifesto .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;color:var(--suave)}
+@media (max-width:900px){.manifesto .grade,.manifesto .cols{grid-template-columns:1fr}}
 
-/* ---------- Serviços ---------- */
-.cab-secao{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}
-.cab-secao h2{margin:0;max-width:16ch}
-.cab-secao .lead{margin:0}
-.servicos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-@media (max-width:1000px){.servicos{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.servicos{grid-template-columns:1fr}}
-.servico{background:#fff;border-radius:var(--raio);overflow:hidden;box-shadow:0 1px 0 var(--linha),0 10px 30px -20px rgba(31,51,32,.3);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
-.servico:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
-.servico figure{margin:0;position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(135deg,#dfe7cc,#e9dccb)}
-.servico figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.servico:hover figure img{transform:scale(1.05)}
-.servico .corpo{padding:22px 22px 26px}
-.servico .num{font:600 .75rem var(--sans);letter-spacing:.14em;color:var(--terra)}
-.servico p{color:var(--suave);font-size:.95rem;margin:0}
+/* Serviços */
+.cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:clamp(40px,6vw,70px)}
+.cab .h2{margin-top:18px;max-width:12ch}
+.cab p{max-width:420px;color:var(--suave);margin:0}
+.lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--linha)}
+.item{display:grid;grid-template-columns:90px 1.1fr 1.2fr 220px;gap:28px;align-items:center;padding:30px 0;border-bottom:1px solid var(--linha);transition:padding .45s var(--ease),background .45s}
+.item:hover{padding-left:18px;padding-right:18px;background:var(--papel)}
+.item .n{font:400 1.2rem var(--serif);color:var(--terracota)}
+.item h3{font-size:clamp(1.9rem,3vw,2.6rem);color:var(--floresta)}
+.item p{margin:0;color:var(--suave);font-size:.97rem}
+.item figure{margin:0;height:140px;border-radius:999px;overflow:hidden;transition:border-radius .5s var(--ease)}
+.item:hover figure{border-radius:20px}
+.item figure img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.item:hover figure img{transform:scale(1.07)}
+@media (max-width:900px){.item{grid-template-columns:1fr;gap:12px;padding:30px 0}.item:hover{padding-left:0;padding-right:0;background:none}.item figure{height:200px;border-radius:20px;order:-1}.item .n{order:-1}}
 
-/* ---------- Como funciona ---------- */
-.processo{background:var(--areia)}
-.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:p;margin-top:12px}
-@media (max-width:900px){.passos{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.passos{grid-template-columns:1fr}}
-.passo{position:relative;padding-top:64px}
-.passo::before{counter-increment:p;content:"0" counter(p);position:absolute;top:0;left:0;font:400 2.6rem/1 var(--serif);color:var(--argila)}
-.passo::after{content:"";position:absolute;top:22px;left:70px;right:-14px;height:1px;background:linear-gradient(90deg,var(--argila),transparent)}
-.passo:last-child::after{display:none}
-@media (max-width:900px){.passo::after{display:none}}
-.passo h3{font-size:1.15rem}
-.passo p{color:var(--suave);font-size:.95rem;margin:0}
+/* AutoCAD */
+.cad{background:var(--floresta);color:#dfe6d4;overflow:hidden;position:relative}
+.cad::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(217,228,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(217,228,184,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 80% 30%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 80% 30%,#000,transparent 70%)}
+.cad .wrap{position:relative}
+.cad .olho{color:var(--argila)}
+.cad .h2{color:#fff;margin:18px 0 26px}
+.cad .h2 em{color:var(--broto)}
+.cad-grade{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,90px);align-items:center}
+.cad p{color:#c9d2bd;max-width:520px}
+.checks{list-style:none;padding:0;margin:30px 0 38px;display:grid;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start}
+.checks svg{width:22px;height:22px;flex:none;margin-top:3px;color:var(--broto)}
+.cad-fotos{position:relative;padding-bottom:70px}
+.cad-fotos .grande{border-radius:26px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.cad-fotos .grande img{width:100%;height:100%;object-fit:cover}
+.cad-fotos .menor{position:absolute;left:-48px;bottom:0;width:36%;aspect-ratio:4/5;border-radius:20px;overflow:hidden;border:6px solid var(--floresta);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.cad-fotos .menor img{width:100%;height:100%;object-fit:cover}
+.cad-fotos .etiqueta{position:absolute;right:18px;bottom:24px;background:var(--broto);color:var(--floresta);border-radius:999px;padding:10px 16px;font:600 .8rem/1 var(--sans);display:flex;align-items:center;gap:8px}
+.cad-fotos .etiqueta i{width:8px;height:8px;border-radius:50%;background:#3aa65a;box-shadow:0 0 0 4px rgba(58,166,90,.25);animation:pulsa 1.8s infinite}
+@keyframes pulsa{50%{box-shadow:0 0 0 8px rgba(58,166,90,0)}}
+@media (max-width:900px){.cad-grade{grid-template-columns:1fr}.cad-fotos{order:-1;padding-bottom:0}.cad-fotos .menor{display:none}.cad-fotos .etiqueta{bottom:16px;right:16px}}
 
-/* ---------- Trabalhos ---------- */
-.galeria{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:14px}
-.galeria > *{position:relative;border-radius:14px;overflow:hidden;margin:0;background:linear-gradient(135deg,#dfe7cc,#e9dccb)}
-.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.galeria figure:hover img{transform:scale(1.04)}
-.g1{grid-column:span 7;grid-row:span 3}
-.g2{grid-column:span 5;grid-row:span 2}
-.g3{grid-column:span 5;grid-row:span 1}
-.g4{grid-column:span 4;grid-row:span 2}
-.g5{grid-column:span 4;grid-row:span 2}
-.g6{grid-column:span 4;grid-row:span 2}
-@media (max-width:760px){.galeria{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.galeria > *{grid-column:span 1 !important;grid-row:span 1 !important}.galeria .g1{grid-column:span 2 !important;grid-row:span 2 !important}}
-.vaga{border:2px dashed rgba(154,100,64,.45);background:linear-gradient(135deg,rgba(63,107,58,.08),rgba(154,100,64,.10)),#fff !important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;color:var(--terra);padding:14px;font-size:.85rem}
-.vaga svg{width:34px;height:34px;stroke:var(--terra);opacity:.8}
-.vaga b{font-size:.95rem}
-.insta-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;padding:22px 26px;border-radius:var(--raio);background:#fff;border:1px solid var(--linha)}
-.insta-cta p{margin:0;color:var(--suave)}
-.insta-cta b{color:var(--floresta)}
+/* Inspirações */
+.insp-grade{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px;height:clamp(420px,56vw,640px)}
+.card{position:relative;border-radius:26px;overflow:hidden;color:#fff;text-decoration:none;display:flex;align-items:flex-end;isolation:isolate}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1s var(--ease)}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 40%,rgba(14,22,15,.82))}
+.card:hover img{transform:scale(1.06)}
+.card .txt{padding:28px}
+.card small{font:600 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--broto)}
+.card h3{font-size:clamp(1.8rem,2.6vw,2.4rem);margin-top:10px}
+.card p{margin:8px 0 0;font-size:.92rem;color:#e4e9dc;max-width:30ch;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .5s}
+.card:hover p{max-height:120px;opacity:1}
+@media (hover:none){.card p{max-height:none;opacity:1}}
+@media (max-width:900px){.insp-grade{grid-template-columns:1fr;height:auto}.card{height:400px}}
 
-/* ---------- Sobre ---------- */
-.sobre{background:var(--floresta);color:#dfe6d2;overflow:hidden}
-.sobre h2{color:#fff}
-.sobre .rotulo{color:var(--argila)}
-.sobre-grade{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:center}
-@media (max-width:860px){.sobre-grade{grid-template-columns:1fr}}
-.sobre figure{margin:0;position:relative;border-radius:var(--raio);overflow:hidden;aspect-ratio:4/5;max-height:640px;background:linear-gradient(135deg,#2f4a2c,#5a3f2a)}
-.sobre figure img{width:100%;height:100%;object-fit:cover}
-.numeros{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15)}
-.numeros b{display:block;font:400 2.3rem/1.1 var(--serif);color:var(--salvia)}
-.numeros small{font-size:.82rem;color:#b9c4a9}
+/* Processo */
+.processo{background:var(--linho-2)}
+.proc-grade{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(32px,6vw,90px)}
+.proc-grade .fixo{position:sticky;top:110px;align-self:start}
+.proc-grade .fixo .h2{margin:18px 0 22px}
+.proc-grade .fixo p{color:var(--suave);max-width:380px}
+.passos{list-style:none;margin:0;padding:0;counter-reset:p}
+.passo{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:34px 0;border-top:1px solid var(--linha)}
+.passo:last-child{border-bottom:1px solid var(--linha)}
+.passo::before{counter-increment:p;content:"0" counter(p);font:400 4rem/0.9 var(--serif);color:var(--terracota)}
+.passo h3{font-size:2rem;color:var(--floresta);margin-bottom:8px}
+.passo p{margin:0;color:var(--suave)}
+@media (max-width:900px){.proc-grade{grid-template-columns:1fr}.proc-grade .fixo{position:static}.passo{grid-template-columns:72px 1fr}.passo::before{font-size:3rem}}
 
-/* ---------- Depoimentos ---------- */
-.depo-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-@media (max-width:900px){.depo-grade{grid-template-columns:1fr}}
-.depo{margin:0;background:#fff;border-radius:var(--raio);padding:30px 28px;border:1px solid var(--linha);position:relative}
-.depo::before{content:"“";position:absolute;top:6px;right:22px;font:400 5rem/1 var(--serif);color:var(--salvia)}
-.depo p{font:400 1.08rem/1.55 var(--serif);color:var(--tinta)}
-.depo footer{font-size:.88rem;color:var(--suave)}
-.depo footer b{color:var(--floresta);display:block}
+/* Sobre */
+.sobre-grade{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.sobre figure{margin:0;position:relative}
+.sobre figure .f1{border-radius:0 0 999px 999px;overflow:hidden;aspect-ratio:4/5}
+.sobre figure .f1 img{width:100%;height:100%;object-fit:cover}
+.sobre .h2{margin:18px 0 26px}
+.sobre p{color:var(--suave)}
+.valores{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.valor{padding:22px;border-radius:20px;background:var(--papel);border:1px solid var(--linha)}
+.valor svg{width:28px;height:28px;color:var(--terracota);margin-bottom:10px}
+.valor b{display:block;font:400 1.45rem/1.1 var(--serif);color:var(--floresta);margin-bottom:6px}
+.valor span{font-size:.9rem;color:var(--suave)}
+@media (max-width:900px){.sobre-grade{grid-template-columns:1fr}.valores{grid-template-columns:1fr}}
 
-/* ---------- Contato ---------- */
-.contato{position:relative;color:#fff;background:var(--floresta);overflow:hidden}
-.contato img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28}
-.contato::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(31,51,32,.5),rgba(20,32,20,.92))}
-.contato .container{position:relative;z-index:1;text-align:center}
-.contato h2{color:#fff;max-width:18ch;margin-left:auto;margin-right:auto}
-.contato .lead{color:#dfe6d2;margin:0 auto 34px}
-.contato .botoes{justify-content:center}
-.dados{list-style:none;padding:0;margin:44px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 36px;font-size:.95rem;color:#dfe6d2}
-.dados li{display:flex;align-items:center;gap:8px}
-.dados svg{width:18px;height:18px;stroke:var(--salvia)}
+/* Instagram */
+.insta{padding-top:0}
+.insta-box{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding:clamp(28px,5vw,56px);border-radius:30px;background:linear-gradient(120deg,var(--papel),#f3e6d6);border:1px solid var(--linha)}
+.insta-box h2{font-size:clamp(2.2rem,4.6vw,3.6rem);color:var(--floresta);margin-top:14px}
+.insta-box h2 em{color:var(--terracota)}
+.insta-box p{margin:12px 0 0;color:var(--suave)}
+@media (max-width:760px){.insta-box{grid-template-columns:1fr}}
 
-footer.rodape{background:#162516;color:#9fae90;font-size:.86rem;padding:34px 0}
-.rodape .container{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
-.rodape a{color:var(--salvia);text-decoration:none}
+/* Contato */
+.contato{background:var(--floresta);color:#fff;position:relative;overflow:hidden;text-align:center}
+.contato img.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22}
+.contato::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(24,41,28,.35),rgba(24,41,28,.96) 75%);z-index:1}
+.contato .wrap{position:relative;z-index:2}
+.contato .olho{color:var(--argila)}
+.contato h2{font-size:clamp(3rem,9vw,7.4rem);margin:22px auto 26px;max-width:12ch}
+.contato h2 em{color:var(--broto)}
+.contato p{color:#cfd8c3;max-width:520px;margin:0 auto 38px}
+.contato .botoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 
-/* ---------- WhatsApp flutuante ---------- */
-.whats-flutuante{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.28);z-index:40;transition:transform .2s}
-.whats-flutuante:hover{transform:scale(1.06)}
-.whats-flutuante svg{width:30px;height:30px}
+/* Rodapé */
+.rodape{background:#0f1a12;color:#9aa78f;padding:56px 0 34px;font-size:.9rem}
+.rodape .grade{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.rodape .marca{color:#fff}
+.rodape .marca small{color:var(--argila)}
+.rodape h4{font:600 .7rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#fff;margin:6px 0 16px}
+.rodape ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rodape a{text-decoration:none}
+.rodape a:hover{color:#fff}
+.rodape .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:24px;font-size:.82rem}
+@media (max-width:760px){.rodape .grade{grid-template-columns:1fr}}
 
-/* ---------- Animação de entrada ---------- */
-.js .revela{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
-.js .revela.visivel{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .revela{opacity:1;transform:none;transition:none}}
+/* Botão flutuante */
+.flutuante{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:60;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--terracota);color:#fff;box-shadow:0 16px 34px -12px rgba(0,0,0,.45);transition:transform .3s var(--ease),opacity .3s;opacity:0;transform:translateY(20px) scale(.8);pointer-events:none}
+.flutuante.ver{opacity:1;transform:none;pointer-events:auto}
+.flutuante:hover{transform:scale(1.06)}
+.flutuante svg{width:28px;height:28px}
+
+/* Revelação ao rolar */
+.js .rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.on{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
-<div class="faixa-modelo" role="note"><b>Site modelo para aprovação.</b> Itens com <span class="selo" style="margin:0 2px">provisório</span> ou sublinhado pontilhado são exemplos.</div>
-
-<header>
-  <div class="container nav">
-    <a class="logo" href="#inicio" aria-label="JS Paisagismo — início">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f3320"/><path d="M16 25c0-8 3-13 9-16-1 8-4 13-9 16zm0 0c0-6-2-10-7-12 0 6 2 10 7 12z" fill="#cfdcae"/></svg>
-      <span>JS Paisagismo<small>Projetos &amp; jardins</small></span>
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="JS Paisagismo, início">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#18291c"/><path d="M20 31c0-10 3.6-16.4 11-20-1.2 10-5 16.4-11 20zm0 0c0-7.4-2.4-12.4-8.6-15 0 7.6 2.6 12.4 8.6 15z" fill="#d9e4b8"/></svg>
+      <span><b>JS Paisagismo</b><small>Projetos &amp; jardins</small></span>
     </a>
-    <nav aria-label="Seções">
-      <ul class="menu">
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
-        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#projeto">Projeto em AutoCAD</a></li>
+        <li><a href="#processo">Como trabalhamos</a></li>
         <li><a href="#sobre">Sobre</a></li>
-        <li><a class="btn btn-escuro js-whats" href="#" target="_blank" rel="noopener">Orçamento</a></li>
+        <li><a class="btn js-contato" href="#contato">Fale conosco</a></li>
       </ul>
     </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
 </header>
 
 <main>
   <!-- ABERTURA -->
   <section class="hero" id="inicio">
-    <img class="fundo" src="img/hero.jpg" srcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" sizes="100vw" alt="Jardim residencial com gramado, caminho de pedras e vegetação tropical" fetchpriority="high">
-    <span class="ilustrativa">Imagem ilustrativa</span>
-    <div class="container">
-      <span class="rotulo">Paisagismo residencial e comercial</span>
-      <h1>Jardins que <em>transformam</em> o seu espaço</h1>
-      <p><span class="prov">Do projeto ao cuidado do dia a dia, criamos áreas verdes bonitas, funcionais e fáceis de manter.</span> <span class="selo">provisório</span></p>
-      <div class="botoes">
-        <a class="btn btn-whats js-whats" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Pedir orçamento</a>
-        <a class="btn btn-vidro" href="#trabalhos">Ver trabalhos</a>
+    <div class="wrap hero-grade">
+      <div class="hero-texto">
+        <span class="olho rv">Paisagismo autoral</span>
+        <h1 class="rv d1">Natureza desenhada para o seu <em>jeito de viver.</em></h1>
+        <p class="sub rv d2">Criamos jardins que unem beleza, funcionalidade e cuidado. Cada projeto nasce no papel, ganha precisão no AutoCAD e floresce no seu espaço.</p>
+        <div class="botoes rv d3">
+          <a class="btn js-contato" href="#contato">Solicitar orçamento <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+          <a class="btn btn-claro" href="#servicos">Conhecer serviços</a>
+        </div>
+        <div class="hero-tags rv d3"><span>Projeto paisagístico</span><span>Implantação</span><span>Manutenção</span></div>
+      </div>
+      <div class="hero-foto rv d2">
+        <div class="arco">
+          <img src="img/hero.jpg" srcset="img/hero-960.jpg 960w, img/hero.jpg 1920w" sizes="(max-width: 900px) 100vw, 50vw" alt="Jardim tropical com caminho de pedras e gramado ao entardecer" fetchpriority="high">
+        </div>
+        <div class="selo-gira" aria-hidden="true">
+          <svg class="texto" viewBox="0 0 132 132"><defs><path id="circ" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text font-family="Manrope, sans-serif" font-size="10.4" font-weight="700" letter-spacing="3.1" fill="#18291c"><textPath href="#circ">JS PAISAGISMO ✦ PROJETOS &amp; JARDINS ✦ </textPath></text></svg>
+          <svg class="folha" viewBox="0 0 40 40"><path d="M20 33c0-11 4-18 12-22-1.3 11-5.4 18-12 22zm0 0c0-8-2.6-13.6-9.4-16.4 0 8.4 2.8 13.6 9.4 16.4z" fill="#18291c"/></svg>
+        </div>
+        <div class="cartao-cad">
+          <img src="img/cad-quadrado.jpg" alt="" width="46" height="46">
+          <span><b>Projetos em AutoCAD</b>Precisão em cada detalhe</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFERENCIAIS -->
-  <section class="diferenciais" aria-label="Diferenciais">
-    <div class="container">
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 15 4 20 3c0 5-3 8-8 9z"/><path d="M12 15c0-4-2-6-7-7 0 4 2 6 7 7z"/></svg><span><b>Projeto sob medida</b><span class="prov">Plantas certas para o seu clima e rotina</span></span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 20v-2a4 4 0 0 0-3-3.9"/></svg><span><b>Atendimento próximo</b><span class="prov">Acompanhamento do início ao fim</span></span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span><b>Orçamento sem compromisso</b><span class="prov">Visita técnica para avaliar o espaço</span></span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span><b class="prov">[Cidade] e região</b><span>Área de atendimento <span class="selo">provisório</span></span></span></li>
-      </ul>
+  <!-- FAIXA -->
+  <div class="faixa" aria-hidden="true">
+    <div class="trilho">
+      <span>Projeto paisagístico</span><span><em>Implantação</em></span><span>Manutenção</span><span><em>Jardins verticais</em></span><span>Vasos &amp; varandas</span><span><em>Projetos em AutoCAD</em></span>
+      <span>Projeto paisagístico</span><span><em>Implantação</em></span><span>Manutenção</span><span><em>Jardins verticais</em></span><span>Vasos &amp; varandas</span><span><em>Projetos em AutoCAD</em></span>
+    </div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <section class="sec manifesto">
+    <div class="wrap grade">
+      <div><span class="olho rv">Nosso olhar</span></div>
+      <div>
+        <blockquote class="rv">Um bom jardim não é só bonito: ele conversa com a <em>arquitetura</em>, respeita a luz e o clima, e acompanha a <em>rotina</em> de quem vive ali.</blockquote>
+        <div class="cols">
+          <p class="rv d1">Por isso, cada trabalho da JS Paisagismo começa com escuta. Entendemos o seu espaço, o seu estilo e o tempo que você quer dedicar às plantas antes de desenhar qualquer canteiro.</p>
+          <p class="rv d2">O resultado são áreas verdes que valorizam o imóvel, criam lugares de convivência e continuam bonitas com o passar das estações.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos">
-    <div class="container">
-      <div class="cab-secao revela">
-        <div><span class="rotulo">Serviços</span><h2>Tudo o que o seu jardim precisa</h2></div>
-        <p class="lead"><span class="prov">Atendemos casas, condomínios e empresas, com soluções pensadas para cada espaço e orçamento.</span> <span class="selo">provisório</span></p>
+  <section class="sec" id="servicos">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="olho rv">Serviços</span><h2 class="h2 rv d1">Do traço ao <em>jardim pronto</em></h2></div>
+        <p class="rv d2">Atendemos residências, condomínios e espaços comerciais, cuidando de todas as etapas para que você só aproveite o resultado.</p>
       </div>
-      <div class="servicos">
-        <article class="servico revela">
-          <figure><img src="img/projeto.jpg" alt="Projeto de jardim desenhado à mão" loading="lazy" width="800" height="600"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-          <div class="corpo"><span class="num">01</span><h3>Projeto paisagístico</h3><p class="prov">Estudo do espaço, escolha das espécies e desenho completo do jardim, de acordo com o seu estilo.</p></div>
-        </article>
-        <article class="servico revela">
-          <figure><img src="img/implantacao.jpg" alt="Mãos com luvas plantando mudas em terra adubada" loading="lazy" width="800" height="600"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-          <div class="corpo"><span class="num">02</span><h3>Implantação</h3><p class="prov">Preparo do solo, plantio, gramado, irrigação e acabamentos, executados com cuidado.</p></div>
-        </article>
-        <article class="servico revela">
-          <figure><img src="img/manutencao.jpg" alt="Tesoura de poda aparando um arbusto" loading="lazy" width="800" height="600"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-          <div class="corpo"><span class="num">03</span><h3>Manutenção</h3><p class="prov">Podas, adubação, controle de pragas e visitas periódicas para o jardim estar sempre bonito.</p></div>
-        </article>
-        <article class="servico revela">
-          <figure><img src="img/vertical.jpg" alt="Varanda com jardim vertical e vasos de terracota" loading="lazy" width="800" height="600"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-          <div class="corpo"><span class="num">04</span><h3>Vasos e jardins verticais</h3><p class="prov">Varandas, sacadas e áreas pequenas ganham vida com vasos e paredes verdes.</p></div>
-        </article>
+      <ul class="lista">
+        <li class="item rv"><span class="n">01</span><h3>Projeto paisagístico</h3><p>Estudo do espaço, escolha das espécies e desenho completo do jardim, desenvolvido em AutoCAD com plantas claras e precisas.</p><figure><img src="img/projeto.jpg" alt="Projeto de jardim desenhado sobre a prancheta" loading="lazy"></figure></li>
+        <li class="item rv"><span class="n">02</span><h3>Implantação</h3><p>Preparo do solo, plantio, gramado e acabamentos, executados com cuidado para o jardim sair do papel exatamente como foi pensado.</p><figure><img src="img/implantacao.jpg" alt="Mãos com luvas plantando mudas" loading="lazy"></figure></li>
+        <li class="item rv"><span class="n">03</span><h3>Manutenção</h3><p>Podas, adubação e cuidados periódicos para manter o jardim saudável e bonito o ano inteiro.</p><figure><img src="img/manutencao.jpg" alt="Tesoura de poda aparando um arbusto" loading="lazy"></figure></li>
+        <li class="item rv"><span class="n">04</span><h3>Vasos e jardins verticais</h3><p>Varandas, sacadas e áreas compactas ganham vida com vasos, floreiras e paredes verdes.</p><figure><img src="img/vertical.jpg" alt="Varanda com jardim vertical e vasos de terracota" loading="lazy"></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AUTOCAD -->
+  <section class="sec cad" id="projeto">
+    <div class="wrap cad-grade">
+      <div>
+        <span class="olho rv">Projeto técnico</span>
+        <h2 class="h2 rv d1">Seu jardim, planejado no <em>AutoCAD</em></h2>
+        <p class="rv d2">Antes de qualquer muda ir para a terra, o projeto é modelado no computador. Assim você visualiza o resultado com antecedência e a execução acontece com precisão, sem improvisos.</p>
+        <ul class="checks">
+          <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Planta baixa com a posição de cada espécie, caminhos e canteiros</span></li>
+          <li class="rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Medidas exatas que facilitam o orçamento e a execução</span></li>
+          <li class="rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><span>Projeto integrado à arquitetura da casa ou do empreendimento</span></li>
+        </ul>
+        <a class="btn btn-broto js-contato rv" href="#contato">Quero um projeto <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
+      </div>
+      <div class="cad-fotos rv d1">
+        <div class="grande"><img src="img/cad.jpg" alt="Profissional modelando um projeto de paisagismo no AutoCAD no escritório" loading="lazy"></div>
+        <div class="menor"><img src="img/cad-mesa.jpg" alt="Projeto de paisagismo em desenvolvimento na tela do computador" loading="lazy"></div>
+        <span class="etiqueta"><i></i>Projeto em desenvolvimento</span>
       </div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
-  <section class="processo" id="como-funciona">
-    <div class="container">
-      <div class="cab-secao revela">
-        <div><span class="rotulo">Como funciona</span><h2>Do primeiro contato ao jardim pronto</h2></div>
-        <p class="lead"><span class="prov">Um processo simples e transparente, para você saber exatamente o que esperar.</span> <span class="selo">provisório</span></p>
+  <!-- INSPIRAÇÕES -->
+  <section class="sec" id="inspiracoes">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="olho rv">Inspirações</span><h2 class="h2 rv d1">Ideias para o <em>seu espaço</em></h2></div>
+        <p class="rv d2">Grandes ou pequenos, todos os espaços podem ganhar verde. Veja alguns estilos que podem inspirar o seu projeto.</p>
       </div>
-      <div class="passos">
-        <div class="passo revela"><h3>Conversa</h3><p class="prov">Você conta pelo WhatsApp o que imagina e envia fotos do espaço.</p></div>
-        <div class="passo revela"><h3>Visita técnica</h3><p class="prov">Avaliamos luz, solo e medidas no local e entendemos a sua rotina.</p></div>
-        <div class="passo revela"><h3>Proposta</h3><p class="prov">Apresentamos o projeto com as espécies escolhidas e o orçamento detalhado.</p></div>
-        <div class="passo revela"><h3>Execução</h3><p class="prov">Implantamos o jardim e orientamos os cuidados, com opção de manutenção.</p></div>
+      <div class="insp-grade">
+        <a class="card rv" href="#contato"><img src="img/hero-960.jpg" alt="Jardim tropical com palmeiras" loading="lazy"><div class="txt"><small>Áreas externas</small><h3>Jardins tropicais</h3><p>Folhagens marcantes, palmeiras e caminhos que convidam a passear.</p></div></a>
+        <a class="card rv d1" href="#contato"><img src="img/sobre.jpg" alt="Recanto de jardim com banco de madeira" loading="lazy"><div class="txt"><small>Convivência</small><h3>Recantos de sombra</h3><p>Espaços acolhedores para descansar, ler e receber.</p></div></a>
+        <a class="card rv d2" href="#contato"><img src="img/vertical.jpg" alt="Varanda com muitas plantas em vasos" loading="lazy"><div class="txt"><small>Apartamentos</small><h3>Varandas verdes</h3><p>Vasos e jardins verticais que transformam poucos metros.</p></div></a>
       </div>
     </div>
   </section>
 
-  <!-- TRABALHOS -->
-  <section id="trabalhos">
-    <div class="container">
-      <div class="cab-secao revela">
-        <div><span class="rotulo">Trabalhos</span><h2>Alguns projetos</h2></div>
-        <p class="lead">As imagens abaixo são <b>ilustrativas</b> ou espaços reservados, e serão substituídas por fotos reais dos jardins da JS Paisagismo. <span class="selo">fotos a incluir</span></p>
+  <!-- PROCESSO -->
+  <section class="sec processo" id="processo">
+    <div class="wrap proc-grade">
+      <div class="fixo">
+        <span class="olho rv">Como trabalhamos</span>
+        <h2 class="h2 rv d1">Simples, claro e <em>do seu jeito</em></h2>
+        <p class="rv d2">Um processo transparente, para você saber exatamente o que acontece em cada etapa.</p>
+        <a class="btn js-contato rv d3" href="#contato">Começar agora <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span></a>
       </div>
-      <!-- Para trocar: substitua o src de cada <img> (ou cada <div class="vaga">) por uma foto real em img/ e remova o selo "Imagem ilustrativa". -->
-      <div class="galeria revela">
-        <figure class="g1"><img src="img/hero-960.jpg" alt="Jardim residencial (imagem ilustrativa)" loading="lazy"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-        <figure class="g2"><img src="img/sobre.jpg" alt="Canto de jardim com banco (imagem ilustrativa)" loading="lazy"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-        <div class="vaga g3" role="img" aria-label="Espaço para foto"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg><b>Foto do seu trabalho</b></div>
-        <figure class="g4"><img src="img/vertical.jpg" alt="Jardim vertical em varanda (imagem ilustrativa)" loading="lazy"><span class="ilustrativa">Imagem ilustrativa</span></figure>
-        <div class="vaga g5" role="img" aria-label="Espaço para foto"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg><b>Foto do seu trabalho</b><span>Ex.: antes e depois</span></div>
-        <div class="vaga g6" role="img" aria-label="Espaço para foto"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg><b>Foto do seu trabalho</b><span>Ex.: condomínio</span></div>
-      </div>
-      <div class="insta-cta revela">
-        <p>Acompanhe os projetos e os bastidores no Instagram <b>@js.paisagismo</b></p>
-        <a class="btn btn-linha" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>Seguir no Instagram</a>
-      </div>
+      <ol class="passos">
+        <li class="passo rv"><div><h3>Conversa inicial</h3><p>Você conta o que imagina e envia fotos do espaço. Entendemos seu estilo, sua rotina e seu orçamento.</p></div></li>
+        <li class="passo rv"><div><h3>Visita técnica</h3><p>Avaliamos no local a luz, o solo, as medidas e a arquitetura.</p></div></li>
+        <li class="passo rv"><div><h3>Projeto em AutoCAD</h3><p>Desenvolvemos o projeto com as espécies escolhidas e apresentamos a proposta detalhada.</p></div></li>
+        <li class="passo rv"><div><h3>Execução e cuidado</h3><p>Implantamos o jardim e orientamos os cuidados, com a opção de manutenção periódica.</p></div></li>
+      </ol>
     </div>
   </section>
 
   <!-- SOBRE -->
-  <section class="sobre" id="sobre">
-    <div class="container sobre-grade">
-      <figure class="revela"><img src="img/sobre.jpg" alt="Canto de jardim com banco de madeira e folhagens tropicais" loading="lazy" width="800" height="1000"><span class="ilustrativa">Imagem ilustrativa · trocar por foto da responsável</span></figure>
-      <div class="revela">
-        <span class="rotulo">Sobre</span>
-        <h2>Paixão por plantas, cuidado em cada detalhe <span class="selo">provisório</span></h2>
-        <div class="prov">
-          <p>A JS Paisagismo nasceu do amor pelas plantas e da vontade de transformar espaços comuns em lugares agradáveis de viver. À frente da empresa, [Nome da responsável] acompanha cada projeto de perto, da primeira conversa ao último vaso.</p>
-          <p>Nosso jeito de trabalhar é simples: ouvir o que você deseja, escolher espécies que combinem com o clima e com a sua rotina, e entregar um jardim bonito e fácil de manter.</p>
-        </div>
-        <div class="numeros prov">
-          <div><b>[X]+</b><small>anos de experiência</small></div>
-          <div><b>[X]+</b><small>jardins entregues</small></div>
-          <div><b>[Cidade]</b><small>e região</small></div>
+  <section class="sec sobre" id="sobre">
+    <div class="wrap sobre-grade">
+      <figure class="rv"><div class="f1"><img src="img/cad-retrato.jpg" alt="Profissional da JS Paisagismo trabalhando em um projeto" loading="lazy"></div></figure>
+      <div>
+        <span class="olho rv">Sobre a JS</span>
+        <h2 class="h2 rv d1">Técnica de escritório, <em>mão na terra</em></h2>
+        <p class="rv d2">A JS Paisagismo une o planejamento técnico do projeto ao conhecimento prático de quem acompanha o jardim de perto. Essa combinação garante projetos bonitos no papel e viáveis na prática.</p>
+        <p class="rv d2">Trabalhamos com atenção a cada detalhe e com respeito ao seu espaço, do primeiro esboço à última muda plantada.</p>
+        <div class="valores">
+          <div class="valor rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12C12 7 15 4 20 3c0 5-3 8-8 9z"/><path d="M12 15c0-4-2-6-7-7 0 4 2 6 7 7z"/></svg><b>Espécies certas</b><span>Plantas adequadas ao clima, à luz e à sua rotina.</span></div>
+          <div class="valor rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Projeto preciso</b><span>Planejamento técnico em AutoCAD antes da execução.</span></div>
+          <div class="valor rv d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg><b>Cuidado de perto</b><span>Atendimento próximo do início ao fim.</span></div>
+          <div class="valor rv d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><b>Proposta clara</b><span>Você sabe o que será feito em cada etapa.</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
-  <section id="depoimentos">
-    <div class="container">
-      <div class="cab-secao revela">
-        <div><span class="rotulo">Depoimentos</span><h2>Quem já tem um jardim JS</h2></div>
-        <p class="lead">Espaço para avaliações reais de clientes. <span class="selo">a incluir</span></p>
-      </div>
-      <div class="depo-grade">
-        <blockquote class="depo revela"><p class="prov">[Depoimento de cliente — exemplo: “O jardim ficou exatamente como eu imaginava.”]</p><footer><b>[Nome do cliente]</b>[Bairro / cidade]</footer></blockquote>
-        <blockquote class="depo revela"><p class="prov">[Depoimento de cliente — exemplo: “Atendimento atencioso do começo ao fim.”]</p><footer><b>[Nome do cliente]</b>[Bairro / cidade]</footer></blockquote>
-        <blockquote class="depo revela"><p class="prov">[Depoimento de cliente — exemplo: “A manutenção mensal faz toda a diferença.”]</p><footer><b>[Nome do cliente]</b>[Bairro / cidade]</footer></blockquote>
+  <!-- INSTAGRAM -->
+  <section class="sec insta">
+    <div class="wrap">
+      <div class="insta-box rv">
+        <div>
+          <span class="olho">Instagram</span>
+          <h2>Acompanhe nossos <em>jardins</em> no dia a dia</h2>
+          <p>Projetos, bastidores e dicas de cuidado em <b>@js.paisagismo</b>.</p>
+        </div>
+        <a class="btn" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>Seguir @js.paisagismo</a>
       </div>
     </div>
   </section>
 
   <!-- CONTATO -->
-  <section class="contato" id="contato">
-    <img class="fundo" src="img/implantacao.jpg" alt="" loading="lazy">
-    <div class="container revela">
-      <span class="rotulo" style="color:var(--argila)">Contato</span>
-      <h2>Vamos criar o seu jardim?</h2>
-      <p class="lead">Mande uma mensagem pelo WhatsApp contando um pouco sobre o seu espaço. O orçamento é sem compromisso.</p>
-      <div class="botoes">
-        <a class="btn btn-whats js-whats" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Falar no WhatsApp</a>
-        <a class="btn btn-vidro" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>@js.paisagismo</a>
+  <section class="sec contato" id="contato">
+    <img class="fundo" src="img/hero-960.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <span class="olho rv">Contato</span>
+      <h2 class="rv d1">Vamos criar o seu <em>jardim?</em></h2>
+      <p class="rv d2">Conte um pouco sobre o seu espaço e o que você imagina. Respondemos com carinho e sem compromisso.</p>
+      <div class="botoes rv d3">
+        <a class="btn btn-broto js-msg" href="https://ig.me/m/js.paisagismo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="js-msg-icone"><use href="#i-msg"/></svg><span class="js-msg-texto">Enviar mensagem</span></a>
+        <a class="btn btn-contorno" href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg>@js.paisagismo</a>
       </div>
-      <ul class="dados">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="prov">(00) 00000-0000</span><span class="selo">provisório</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><span class="prov">contato@exemplo.com</span><span class="selo">provisório</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="prov">[Cidade] – [UF]</span><span class="selo">provisório</span></li>
-      </ul>
     </div>
   </section>
 </main>
 
 <footer class="rodape">
-  <div class="container">
-    <span>© <span id="ano">2026</span> JS Paisagismo · <a href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener">@js.paisagismo</a></span>
-    <span>Site modelo para aprovação — imagens ilustrativas geradas no Canva.</span>
+  <div class="wrap">
+    <div class="grade">
+      <div>
+        <a class="marca" href="#inicio">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#d9e4b8"/><path d="M20 31c0-10 3.6-16.4 11-20-1.2 10-5 16.4-11 20zm0 0c0-7.4-2.4-12.4-8.6-15 0 7.6 2.6 12.4 8.6 15z" fill="#18291c"/></svg>
+          <span><b>JS Paisagismo</b><small>Projetos &amp; jardins</small></span>
+        </a>
+        <p style="margin-top:18px;max-width:34ch">Projeto, implantação e manutenção de jardins, com planejamento técnico em AutoCAD.</p>
+      </div>
+      <div><h4>Navegação</h4><ul><li><a href="#servicos">Serviços</a></li><li><a href="#projeto">Projeto em AutoCAD</a></li><li><a href="#processo">Como trabalhamos</a></li><li><a href="#sobre">Sobre</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a class="js-msg" href="https://ig.me/m/js.paisagismo" target="_blank" rel="noopener">Enviar mensagem</a></li><li><a href="https://www.instagram.com/js.paisagismo/" target="_blank" rel="noopener">Instagram @js.paisagismo</a></li></ul></div>
+    </div>
+    <div class="base"><span>© <span id="ano">2026</span> JS Paisagismo. Todos os direitos reservados.</span><span>Imagens ilustrativas.</span></div>
   </div>
 </footer>
 
-<a class="whats-flutuante js-whats" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg></a>
+<a class="flutuante js-msg" id="flutuante" href="https://ig.me/m/js.paisagismo" target="_blank" rel="noopener" aria-label="Enviar mensagem"><svg viewBox="0 0 24 24" aria-hidden="true" class="js-msg-icone"><use href="#i-msg"/></svg></a>
 
-<!-- Ícones reutilizados -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></symbol>
   <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></symbol>
 </svg>
 
 <script>
-  // ===== CONFIGURAÇÃO DO WHATSAPP (PROVISÓRIO) =====
-  // Troque pelo número real: 55 + DDD + número, só dígitos. Ex.: "5511987654321"
-  var WHATSAPP_NUMERO = "5500000000000";
+  // ===== CONTATO =====
+  // Hoje as mensagens vão para o Direct do Instagram (@js.paisagismo).
+  // Para usar WhatsApp, preencha o número: 55 + DDD + número, só dígitos. Ex.: "5511987654321"
+  var WHATSAPP_NUMERO = "";
   var WHATSAPP_MENSAGEM = "Olá! Vi o site da JS Paisagismo e gostaria de um orçamento.";
-  var link = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
-  document.querySelectorAll(".js-whats").forEach(function (a) { a.href = link; });
+
+  if (WHATSAPP_NUMERO) {
+    var wa = "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(WHATSAPP_MENSAGEM);
+    document.querySelectorAll(".js-msg").forEach(function (a) { a.href = wa; });
+    document.querySelectorAll(".js-msg-icone use").forEach(function (u) { u.setAttribute("href", "#i-whats"); });
+    document.querySelectorAll(".js-msg-texto").forEach(function (s) { s.textContent = "Chamar no WhatsApp"; });
+  }
   document.getElementById("ano").textContent = new Date().getFullYear();
 
-  // Animação suave ao rolar
-  var itens = document.querySelectorAll(".revela");
+  // Menu do celular
+  var topo = document.getElementById("topo"), burger = document.getElementById("burger");
+  burger.addEventListener("click", function () {
+    var a = topo.classList.toggle("aberto");
+    burger.setAttribute("aria-expanded", a);
+  });
+  document.querySelectorAll("#menu a").forEach(function (l) {
+    l.addEventListener("click", function () { topo.classList.remove("aberto"); burger.setAttribute("aria-expanded", false); });
+  });
+
+  // Cabeçalho sólido e botão flutuante ao rolar
+  var flut = document.getElementById("flutuante");
+  function aoRolar() {
+    var y = window.scrollY;
+    topo.classList.toggle("solido", y > 30);
+    flut.classList.toggle("ver", y > window.innerHeight * 0.7);
+  }
+  window.addEventListener("scroll", aoRolar, { passive: true }); aoRolar();
+
+  // Revelação ao rolar
+  var rv = document.querySelectorAll(".rv");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("visivel"); io.unobserve(e.target); } });
-    }, { rootMargin: "0px 0px -8% 0px" });
-    itens.forEach(function (el) { io.observe(el); });
-  } else {
-    itens.forEach(function (el) { el.classList.add("visivel"); });
-  }
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add("on"); }); }
 </script>
 </body>
 </html>
